@@ -1,0 +1,1 @@
+(()=>{"use strict";document.querySelector("#content").appendChild((()=>{const e=document.createElement("header");return e.classList.add("main-header"),e.innerHTML='\n        <header class="home-logo">ToDOToday</header>\n        <button class="save-btn">SAVE</button>',e})())})();
