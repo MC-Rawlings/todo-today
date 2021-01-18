@@ -42,6 +42,7 @@ html {
     font-weight: 600;
     color: #14274e;
     background-color: #9ba4b4;
+    transition: 0.25s;
 }
 
 .save-btn:hover {
