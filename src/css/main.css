@@ -1,4 +1,4 @@
-/* COLORS: https://colorhunt.co/palette/212984 
+/* COLORS: https://colorhunt.co/palette/212984
     FONT: https://fonts.google.com/specimen/Karla?vfonly=true&category=Sans+Serif
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;700&display=swap" rel="stylesheet">
@@ -47,4 +47,32 @@ html {
 
 .save-btn:hover {
     background-color: rgb(204, 208, 216);
+}
+
+.navBar {
+    color: #14274e;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 10.5rem);
+    background: #9ba4b4;
+    width: 30rem;
+    font-size: 2rem;
+    padding: 1rem;
+    text-align: left;
+}
+
+.nav-heading {
+    font-size: 1.5em;
+    font-weight: 600;
+    align-self: center;
+}
+
+.nav-hr {
+    margin: 1rem 1rem;
+    outline: none;
+
+}
+
+.nav-link {
+    padding: 1rem;
 }

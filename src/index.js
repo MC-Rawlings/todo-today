@@ -1,6 +1,6 @@
-import loadNavBar from './homepage';
+import {loadHomePage} from './homepage';
 
 const content = document.querySelector('#content');
 
-content.appendChild(loadNavBar());
+content.appendChild(loadHomePage());
 

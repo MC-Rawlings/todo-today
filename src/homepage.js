@@ -1,19 +1,12 @@
-// const loadHomepage = () => {
+import {loadHeader} from './header';
+import {loadNavBar} from './navBar';
 
-//     const 
+export const loadHomePage = () => {
 
-// }
+    const body = document.createElement("div");
+    body.appendChild(loadHeader());
+    body.appendChild(loadNavBar());
 
-const loadNavBar = () => {
-
-    const nav = document.createElement('header');
-    nav.classList.add('main-header');
-    nav.innerHTML = `
-        <header class="home-logo">ToDOToday</header>
-        <button class="save-btn">SAVE</button>`;
-
-    return nav;
+    return body;
 
 }
-
-export default loadNavBar;
