@@ -22,9 +22,9 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 5rem;
-    background-color: #14274e;
+    padding: 2rem 6rem;
     color: #f1f6f9;
+    background-color: #14274e;
 }
 
 .home-logo {
@@ -53,15 +53,17 @@ html {
     color: #14274e;
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 10.5rem);
+    height: calc(100vh - 8.5rem);
     background: #9ba4b4;
     width: 30rem;
     font-size: 2rem;
     padding: 1rem;
     text-align: left;
+    position: fixed;
 }
 
 .nav-heading {
+    padding: 1.5rem 0;
     font-size: 1.5em;
     font-weight: 600;
     align-self: center;
