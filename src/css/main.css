@@ -98,11 +98,9 @@ html {
 .main-section h2 {
     width: 100rem;
     color: #14274e;
-    font-size: 5rem;
+    font-size: 7rem;
     font-weight: 400;
-    padding-bottom: 2rem;
     padding-left: 2rem;
-    border-bottom: 1px solid #9ba4b4;
 }
 
 .task-list-wrapper {
@@ -118,7 +116,8 @@ html {
 .main-section button {
     width: 8rem;
     height: 8rem;
-    margin-left: calc(-100rem + 15rem);
+    margin-left: calc(-100rem + 10rem);
+    margin-top: -2rem;
     border: none;
     background-color: #14274e;
     font-size: 5rem;
