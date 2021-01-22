@@ -11,7 +11,7 @@ export const loadMain = () => {
             </ul>
         </div>
 
-        <button>add task</button>
+        <button type="button">+</button>
     `;
 
     return main;

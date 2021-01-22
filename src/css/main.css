@@ -80,7 +80,8 @@ html {
 }
 
 .nav-link {
-    padding: 1rem;
+    padding: 2rem;
+    font-size: 2.5rem;
 }
 
 /* Main section stylings */
@@ -100,6 +101,7 @@ html {
     font-size: 5rem;
     font-weight: 400;
     padding-bottom: 2rem;
+    padding-left: 2rem;
     border-bottom: 1px solid #9ba4b4;
 }
 
@@ -108,14 +110,32 @@ html {
     width: 100rem;
     margin: 5rem;
     background: #394867;
+    border-radius: 10px;
+    padding: 2.5rem;
+    font-size: 2rem;
 }
 
 .main-section button {
-    width: 15rem;
-    height: 5rem;
+    width: 8rem;
+    height: 8rem;
     margin-left: calc(-100rem + 15rem);
+    border: none;
+    background-color: #14274e;
+    font-size: 5rem;
+    border-radius: 50%;
+    color: #f1f6f9;
+}
+
+.main-section button:hover {
+    background-color: #24478f;
 }
 
 .task-list {
     color: #f1f6f9;
+}
+
+.task-item {
+    border: 1px solid #f1f6f9;
+    border-radius: 4px;
+    padding: 1rem 2rem;
 }
