@@ -14,7 +14,7 @@
 html {
     font-family: 'Karla', sans-serif;
     font-size: 62.5%;
-    background-color: #f1f6f9;
+    background-color: #f2f2f2;
 }
 
 /* Header stylings */
@@ -25,13 +25,13 @@ html {
     justify-content: space-between;
     align-items: center;
     padding: 2rem 6rem;
-    color: #f1f6f9;
-    background-color: #14274e;
+    color: #f2f2f2;
+    background-color: #222831;
 }
 
 .home-logo {
     font-size: 3.5rem;
-    font-weight: 600;
+    font-weight: 400;
     cursor: pointer;
 }
 
@@ -54,23 +54,24 @@ html {
 
 /* Navbar stylings */
 .navBar {
-    color: #14274e;
+    color: #222831;
     display: flex;
     flex-direction: column;
     height: calc(100vh - 8.5rem);
-    background: #9ba4b4;
+    background: #f2f2f2;
     width: 30rem;
     font-size: 2rem;
     padding: 1rem;
     text-align: left;
     position: fixed;
+    border-right: 1px solid #222831;
 }
 
 .nav-heading {
-    padding: 1.5rem 0;
+    padding: 1.5rem 2rem;
     font-size: 1.5em;
     font-weight: 600;
-    align-self: center;
+    align-self: left;
 }
 
 .nav-hr {
@@ -81,7 +82,7 @@ html {
 
 .nav-link {
     padding: 2rem;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 /* Main section stylings */
@@ -92,22 +93,21 @@ html {
     align-items: center;
     height: calc(100vh - 8.5rem);
     padding-left: 25rem;
-    padding-top: 10rem;
+    padding-top: 5rem;
 }
 
 .main-section h2 {
     width: 100rem;
-    color: #14274e;
-    font-size: 7rem;
-    font-weight: 400;
+    color: #222831;
+    font-size: 6rem;
+    font-weight: 600;
     padding-left: 2rem;
 }
 
 .task-list-wrapper {
-    height: 40rem;
+    height: auto;
     width: 100rem;
-    margin: 5rem;
-    background: #394867;
+    background: #f2f2f2;
     border-radius: 10px;
     padding: 2.5rem;
     font-size: 2rem;
@@ -116,25 +116,38 @@ html {
 .main-section button {
     width: 8rem;
     height: 8rem;
-    margin-left: calc(-100rem + 10rem);
-    margin-top: -2rem;
     border: none;
-    background-color: #14274e;
+    margin-top: 2rem;
+    background-color: #f96d00;
     font-size: 5rem;
     border-radius: 50%;
     color: #f1f6f9;
+    transition: 200ms;
 }
 
 .main-section button:hover {
-    background-color: #24478f;
+    width: 8.5rem;
+    height: 8.5rem;
 }
 
 .task-list {
     color: #f1f6f9;
+    border-radius: 5px;
+    margin-top: 2rem;
 }
 
 .task-item {
     border: 1px solid #f1f6f9;
     border-radius: 4px;
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1rem;
+    background-color: #393e46;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2.5rem;
+}
+
+.task-info {
+    font-size: 0.75em;
 }

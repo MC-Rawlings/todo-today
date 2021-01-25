@@ -7,6 +7,12 @@ export const loadMain = () => {
 
         <div class="task-list-wrapper">
             <ul class="task-list">
+                <li class="task-item">do dishes
+                    <span class="task-info">clean up the kitchen bofore...</span>
+                    <span class="task-priority">+ + +</span>
+                </li>
+                <li class="task-item">do dishes</li>
+                <li class="task-item">do dishes</li>
                 <li class="task-item">do dishes</li>
             </ul>
         </div>
