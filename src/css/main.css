@@ -14,7 +14,7 @@
 html {
     font-family: 'Karla', sans-serif;
     font-size: 62.5%;
-    background-color: #f1faee;
+    background-color: #457b9d;
 }
 
 /* Header stylings */
@@ -58,7 +58,7 @@ html {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: #a8dadc;
+    background-color: #f1faee;
     width: 30rem;
     font-size: 2rem;
     padding: 1rem;
@@ -101,7 +101,7 @@ html {
     height: 12rem;
     max-width: 90%;
     color: #f1faee;
-    background-color: #e63946;
+    background-color: #1d3557;
     font-size: 7.5rem;
     font-weight: 400;
     padding: 2rem;
@@ -121,7 +121,7 @@ html {
 .task-list {
     max-height: 40rem;
     overflow-y: scroll;
-    color: #f1f6f9;
+    color: #1D3557;
     border-radius: 5px;
     margin-top: 2rem;
     padding-right: 1rem;
@@ -131,7 +131,7 @@ html {
     border-radius: 4px;
     padding: 1.5rem 2rem;
     margin-bottom: 1rem;
-    background-color: #457b9d;
+    background-color: #a8dadc;
     display: flex;
     justify-content: space-between;
     align-items: center;
