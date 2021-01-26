@@ -14,6 +14,15 @@ export const loadMain = () => {
                 <li class="task-item">do dishes</li>
                 <li class="task-item">do dishes</li>
                 <li class="task-item">do dishes</li>
+                <li class="task-item">do dishes</li>
+                <li class="task-item">do dishes</li>
+                <li class="task-item">do dishes</li>
+                <li class="task-item">do dishes</li>
+                <li class="task-item">do dishes</li>
+                <li class="task-item">do dishes</li>
+                <li class="task-item">do dishes</li>
+                <li class="task-item">do dishes</li>
+                <li class="task-item">do dishes</li>
             </ul>
         </div>
 

@@ -14,7 +14,7 @@
 html {
     font-family: 'Karla', sans-serif;
     font-size: 62.5%;
-    background-color: #f2f2f2;
+    background-color: #f1faee;
 }
 
 /* Header stylings */
@@ -54,13 +54,11 @@ html {
 
 /* Navbar stylings */
 .navBar {
-    color: #f1f6f9;
+    color: #112b2c;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background: #005C97;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #363795, #005C97);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #363795, #005C97); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: #a8dadc;
     width: 30rem;
     font-size: 2rem;
     padding: 1rem;
@@ -98,16 +96,30 @@ html {
 }
 
 .main-section h2 {
-    width: 100rem;
+    border-radius: 10px 10px 0 0;
+    width: 80rem;
+    height: 12rem;
     max-width: 90%;
-    color: #20385c;
+    color: #f1faee;
+    background-color: #e63946;
     font-size: 7.5rem;
     font-weight: 400;
-    padding-left: 2rem;
+    padding: 2rem;
+    margin-top: -5rem;
+    text-align: center;
+}
+
+.task-list-wrapper {
+    max-width: 90%;
+    width: 100rem;
+    border-radius: 10px;
+    padding: 2.5rem;
+    font-size: 2rem;
+    margin: 2.5rem;
 }
 
 .task-list {
-    max-height: 20rem;
+    max-height: 40rem;
     overflow-y: scroll;
     color: #f1f6f9;
     border-radius: 5px;
@@ -115,16 +127,11 @@ html {
     padding-right: 1rem;
 }
 
-.task-list::-webkit-scrollbar-track-piece {
-    color: rgb(255, 127, 28);
-}
-
 .task-item {
-    border: 1px solid #f1f6f9;
     border-radius: 4px;
     padding: 1.5rem 2rem;
     margin-bottom: 1rem;
-    background-color: #61616b;
+    background-color: #457b9d;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -140,21 +147,12 @@ html {
     white-space: nowrap;
 }
 
-.task-list-wrapper {
-    max-width: 90%;
-    width: 100rem;
-    background: #f2f2f2;
-    border-radius: 10px;
-    padding: 2.5rem;
-    font-size: 2rem;
-}
-
 .main-section button {
     width: 8rem;
     height: 8rem;
     border: none;
     margin-top: 2rem;
-    background-color: #f96d00;
+    background-color: #e63946;
     font-size: 5rem;
     border-radius: 50%;
     color: #f1f6f9;
