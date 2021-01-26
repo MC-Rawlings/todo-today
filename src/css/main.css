@@ -54,17 +54,18 @@ html {
 
 /* Navbar stylings */
 .navBar {
-    color: #222831;
+    color: #f1f6f9;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background: #f2f2f2;
+    background: #005C97;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #363795, #005C97);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #363795, #005C97); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     width: 30rem;
     font-size: 2rem;
     padding: 1rem;
     text-align: left;
     position: fixed;
-    border-right: 1px solid #222831;
 }
 
 .nav-heading {
@@ -99,16 +100,23 @@ html {
 .main-section h2 {
     width: 100rem;
     max-width: 90%;
-    color: #222831;
-    font-size: 6rem;
-    font-weight: 600;
+    color: #20385c;
+    font-size: 7.5rem;
+    font-weight: 400;
     padding-left: 2rem;
 }
 
 .task-list {
+    max-height: 20rem;
+    overflow-y: scroll;
     color: #f1f6f9;
     border-radius: 5px;
     margin-top: 2rem;
+    padding-right: 1rem;
+}
+
+.task-list::-webkit-scrollbar-track-piece {
+    color: rgb(255, 127, 28);
 }
 
 .task-item {
@@ -116,7 +124,7 @@ html {
     border-radius: 4px;
     padding: 1.5rem 2rem;
     margin-bottom: 1rem;
-    background-color: #393e46;
+    background-color: #61616b;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -125,11 +133,15 @@ html {
 
 .task-info {
     font-size: 0.75em;
+    width: 10em;
+    max-height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .task-list-wrapper {
     max-width: 90%;
-    height: auto;
     width: 100rem;
     background: #f2f2f2;
     border-radius: 10px;
@@ -151,4 +163,10 @@ html {
 
 .main-section button:hover {
     background-color: rgb(255, 127, 28);
+}
+
+.task-priority {
+    height: 100%;
+    width: 3em;
+    background-color: red;
 }

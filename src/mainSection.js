@@ -9,7 +9,7 @@ export const loadMain = () => {
             <ul class="task-list">
                 <li class="task-item">do dishes
                     <span class="task-info">clean up the kitchen bofore...</span>
-                    <span class="task-priority">+ + +</span>
+                    <div class="task-priority"></div>
                 </li>
                 <li class="task-item">do dishes</li>
                 <li class="task-item">do dishes</li>
