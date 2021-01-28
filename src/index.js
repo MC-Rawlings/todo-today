@@ -1,10 +1,5 @@
-import {createTask} from './tasks';
-import {createTaskList} from './taskList';
+import {createTask} from './task'
 
-const personal = createTaskList("Personal");
-console.log(personal);
-const dishes = createTask("dishes");
+const dishes = createTask("dishses", "do dishses in the morning", 12.04, 2);
 console.log(dishes);
-
-personal.addTask(dishes);
-console.log(personal);
+dishes.getInfo();
