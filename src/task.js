@@ -1,33 +1,38 @@
  export const createTask = (name, description, dueDate, priority) => {
     let isChecked = false;
 
-    const getInfo = () => console.log(name, description, dueDate,
-        priority, isChecked);
+    const getName = () => name;
+    const getDescription = () => description;
+    const getDate = () => dueDate;
+    const getPriority = () => priority;
+    const getStatus = () => isChecked;
+
 
     const changeName = (newName) => {
-        this.name = newName;
+        name = newName;
     }
 
     const changeDescription = (newDesc) => {
-        this.description = newDesc;
+        description = newDesc;
     }
 
     const changeDate = (newDate) => {
-        this.dueDate = newDate;
+        dueDate = newDate;
     }
 
     const changePriority = (newPriority) => {
-        this.priority = newPriority;
+        priority = newPriority;
     }
 
     const toggleChecked = () => {
-        if (this.isChecked === true) {
-            this.isChecked = false;
+        if (isChecked === true) {
+            isChecked = false;
         } else {
-            this.isChecked = true;
+            isChecked = true;
         }
     }
 
-    return {getInfo, changeName, changeDescription, changeDate,
-        changePriority, toggleChecked};
+    return {getName, getDescription, getDate,
+        getPriority, getStatus, changeName, changeDescription,
+        changeDate, changePriority, toggleChecked};
 }
