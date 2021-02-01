@@ -1,0 +1,60 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --clr-primary: #14213D;
+    --clr-secondary: #F5A522;
+    --clr-bg: #E5E5E5;
+    --font-display: 'Boogalo', cursive;
+    --font-sans: 'Montserrat', sans-serif;
+}
+
+body {
+    margin: 0 1em;
+}
+
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1em 0;
+}
+
+.logo img {
+    width: 8rem;
+}
+
+.btn-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    font-family: 'Boogaloo', cursive;
+    width: 5em;
+    height: 1.5em;
+    color: rgb(238, 235, 235);
+    background-color: var(--clr-secondary);
+    border-radius: 5px;
+}
+
+.side-menu {
+    
+}
+
+
+.bs-text {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4)
+}
+
+.bs-btn {
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+
+
