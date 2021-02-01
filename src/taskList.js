@@ -2,7 +2,7 @@ export const createList = (name) => {
     const list = [];
 
     const getList = () => {
-        console.log(list);
+        return list;
     }
 
     const addTask = (task) => {
