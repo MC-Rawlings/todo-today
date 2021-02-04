@@ -151,6 +151,37 @@ body {
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
 }
 
+@media only screen and (min-width: 760px) {
+
+    body {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 20rem auto;
+        grid-template-rows: 1fr 3fr;
+    }
+
+    .side-menu {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: end;
+        background: var(--clr-bg);
+    }
+
+    .header-main {
+        grid-column-start: 2;
+        grid-column-end: end;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .main-content {
+        grid-column-start: 2;
+        grid-column-end: end;
+        grid-row-start: 2;
+    }
+}
+
 
 
 
