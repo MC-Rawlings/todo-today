@@ -1,11 +1,5 @@
 
 
-const renderPage = () => {
-
-
-
-}
-
 export function toggleLists() {
     const toggleBtn = document.querySelector(".toggle-lists");
     const lists = document.querySelector(".lists");

@@ -19,7 +19,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 1em 1em 1.5em 1em;
+    margin: 1rem 1rem;
 }
 
 .logo img {
@@ -35,11 +35,12 @@ body {
     font-size: 1.25rem;
     font-family: 'Boogaloo', cursive;
     width: 5em;
-    height: 5em;
+    height: 2.5em;
     color: #fff;
     background-color: var(--clr-secondary);
-    border-radius: 50%;
+    border-radius: 5px;
     transition: 200ms;
+    margin: 0 1rem;
 }
 
 .btn-login:hover {
@@ -78,6 +79,7 @@ body {
     background-color: var(--clr-bg);
     display: none;
     position: fixed;
+    height: 100%;
     width: 100vw;
     transition: 200ms;
 }
@@ -94,7 +96,11 @@ body {
     transform: translateY(-0.4rem);
 }
 
-
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .tasks-section {
     font-weight: 600;
@@ -102,30 +108,38 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-height: 75%;
+    width: 95%;
+    max-height: 45vh;
+    overflow-y: scroll;
     letter-spacing: 2px;
+    margin-top: 2rem;
 }
 
 .task-card {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.25rem;
     color: var(--clr-bg);
     background: var(--clr-primary);
     border-radius: 10px;
     margin: 0.5rem;
-    padding: 1rem;
-    width: 90%;
-    height: 2.5rem;
+    padding: 0 1rem;
+    width: 100%;
+    height: 1rem;
     min-height: 4.5rem;
 }
 
+.check-icon img{
+    width: 2rem;
+}
+
 .tasks-add-btn {
+    align-self: flex-start;
     color: var(--clr-secondary);
     background: #fff;
     border: 4px solid;
-    margin-top: 4rem;
+    margin-top: 2rem;
+    margin-left: 1.5rem;
     padding: 0.5em;
     text-align: center;
     transition: 200ms;
@@ -139,7 +153,7 @@ body {
 .deco-shape img {
     position: fixed;
     bottom: 0;
-    right: 5%;
+    right: 50px;
 }
 
 .bs-text {
@@ -150,13 +164,14 @@ body {
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
 }
 
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: 1000px) {
 
     body {
         min-height: 100vh;
         display: grid;
         grid-template-columns: 20rem auto;
         grid-template-rows: 1fr 3fr;
+        margin-right: 5rem;
     }
 
     .side-menu {
@@ -164,6 +179,7 @@ body {
         grid-column-end: 2;
         grid-row-start: 1;
         grid-row-end: end;
+        margin-right: 5rem;
         background: var(--clr-bg);
     }
 
@@ -172,16 +188,25 @@ body {
         grid-column-end: end;
         grid-row-start: 1;
         grid-row-end: 2;
+        margin: 0 0 0 2%;
     }
 
     .logo img{
-        width: 15rem;
+        width: 16rem;
     }
 
     .main-content {
         grid-column-start: 2;
         grid-column-end: end;
         grid-row-start: 2;
+    }
+
+    .btn-login, .tasks-add-btn {
+        font-size: 1.5rem;
+        border-radius: 10px;
+        width: 8rem;
+        height: 3rem;
+        margin-right: 5%;
     }
 }
 
