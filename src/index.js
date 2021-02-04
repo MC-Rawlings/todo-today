@@ -1,5 +1,6 @@
-import {createTask} from './task'
-import {createList} from './taskList'
+import {toggleLists} from './dom';
+
+toggleLists();
 
 
 

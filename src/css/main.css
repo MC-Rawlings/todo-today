@@ -71,25 +71,27 @@ body {
 
 }
 
-.lists-hidden, .lists-shown {
+.lists {
     padding: 2rem;
-    display: flex;
     flex-direction: column;
     align-items: center;
     background-color: var(--clr-bg);
     display: none;
     position: fixed;
     width: 100vw;
-}
-
-.lists-shown {
-    display: flex;
+    transition: 200ms;
 }
 
 .list-item {
+    cursor: pointer;
     margin: 1rem;
     font-size: 1.2em;
     letter-spacing: 3px;
+    transition: 200ms;
+}
+
+.list-item:hover {
+    transform: translateY(-0.4rem);
 }
 
 
@@ -124,7 +126,7 @@ body {
     background: #fff;
     border: 4px solid;
     height: 2.5rem;
-    margin-top: 2.5rem;
+    margin-top: 4rem;
     padding: 0.5em;
     width: 10em;
     transition: 200ms;
@@ -138,7 +140,7 @@ body {
 .deco-shape img {
     position: fixed;
     bottom: 0;
-    right: 10%;
+    right: 5%;
 }
 
 .bs-text {
