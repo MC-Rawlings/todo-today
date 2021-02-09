@@ -87,19 +87,25 @@
 
     </div>
 
-    <div class="add-task__modal">
-        <img src="../src/css/images/undraw_task_list_6x9d.svg" alt="">
-        <h2>ADD TASK</h2>
-        <form action="" class="add-task__form">
-            <label for="title">NAME</label>
-            <input type="text" id="title">
-            <label for="description">NAME</label>
-            <input type="text" id="description">
-
-        </form>
-        <img src="../src/css/images/confirm.svg" alt="" id="add-task__confirm">
-        <img src="../src/css/images/cancel.svg" alt="" id="add-task__cancel">
-
+    <div class="modal-bg">
+        <div class="add-task__modal">
+            <img src="../src/css/images/undraw_task_list_6x9d.svg" alt="" class="modal-header">
+            <form action="" class="add-task__form">
+                <label for="title">NAME</label>
+                <input type="text" id="title">
+                <label for="description">DESCRIPTION</label>
+                <input type="text" id="description">
+                <div class="priority-choice">
+                    <img src="../src/css/images/flag-green.svg" alt="">
+                    <img src="../src/css/images/flag-orange.svg" alt="">
+                    <img src="../src/css/images/flag-red.svg" alt="">
+                </div>
+            </form>
+            <div class="add-task__btns">
+                <img src="../src/css/images/confirm.svg" alt="" id="add-task__confirm">
+                <img src="../src/css/images/cancel.svg" alt="" id="add-task__cancel">
+            </div>
+        </div>
     </div>
 
     <script src="main.js"></script>
