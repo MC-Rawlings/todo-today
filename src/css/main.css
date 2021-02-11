@@ -261,6 +261,7 @@ body {
         grid-row-end: end;
         width: 18rem;
         background: var(--clr-bg);
+        padding-top: 2rem;
     }
 
     .lists {
