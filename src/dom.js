@@ -48,8 +48,11 @@ const addTask = (() => {
         const task = document.createElement("li");
         task.classList.add("task-card");
         task.innerHTML = `
-            <h4 class="task-title">${taskTitle}</h4>
-            <span class="check-icon"><img src="css/images/checkbox.svg" alt=""></span>
+                <div class="check-title">
+                    <span class="check-icon"><img src="css/images/checkbox.svg" alt=""></span>
+                    <h4 class="task-title">dishes</h4>
+                </div>
+                <p class="task-description">Do dishes before 10AM</p>
         `;
 
         tasksSection.appendChild(task);

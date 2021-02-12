@@ -135,8 +135,38 @@ body {
     min-height: 3.5rem;
 }
 
+.check-title {
+    display: flex;
+    align-items: center;
+}
+
 .check-icon img{
     width: 2rem;
+    margin-right: 1rem;
+}
+
+.task-description {
+    font-weight: 400;
+    font-size: 0.85em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 25%;
+}
+
+.task-options {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: auto;
+}
+
+.priority-flag, .task-delete {
+    display: none;
+}
+
+.task-option-btn {
+    width: 1.5rem;
 }
 
 .tasks-add-btn {
@@ -292,6 +322,14 @@ body {
         grid-row-start: 2;
     }
 
+    .task-options {
+        width: 35%;
+    }
+
+    .priority-flag, .task-delete {
+        display: block;
+    }
+
     .btn-login, .tasks-add-btn {
         font-size: 1.5rem;
         border-radius: 10px;
@@ -306,6 +344,10 @@ body {
 
     body {
         margin-right: 4rem;
+    }
+
+    .task-options {
+        width: 20%;
     }
 }
 
