@@ -1,5 +1,8 @@
 import {createTask} from './task'
 
+
+    const modal = document.querySelector(".modal-bg");
+
 export const toggleLists = (() => {
     const toggleBtn = document.querySelector(".toggle-lists");
     const lists = document.querySelector(".lists");
@@ -14,7 +17,6 @@ export const toggleLists = (() => {
 
 export const closeModal = (() => {
     const cancelBtn = document.querySelector("#add-task__cancel");
-    const modal = document.querySelector(".modal-bg");
 
     cancelBtn.addEventListener("click", () => {
         modal.style.display = "none";
@@ -51,6 +53,8 @@ const addTask = (() => {
         `;
 
         tasksSection.appendChild(task);
+        form.reset();
+        modal.style.display = "none";
     });
 
 })();

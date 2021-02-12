@@ -115,7 +115,8 @@ body {
     justify-content: center;
     align-items: center;
     width: 95%;
-    max-height: 45vh;
+    height: auto;
+    max-height: 47.5vh;
     overflow-y: scroll;
     letter-spacing: 2px;
     margin-top: 2rem;
