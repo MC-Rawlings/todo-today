@@ -1,4 +1,4 @@
-
+import {createTask} from './task'
 
 export const toggleLists = (() => {
     const toggleBtn = document.querySelector(".toggle-lists");
@@ -33,6 +33,24 @@ export const openModal = (() => {
 
 })();
 
-export const addTask = () => {
-    
-}
+const addTask = (() => {
+    const form = document.querySelector("form");
+    const tasksSection = document.querySelector(".tasks-section");
+    const addBtn = document.querySelector("#add-task__confirm");
+
+
+    addBtn.addEventListener("click", () => {
+        let taskTitle = form.elements[0].value;
+        let taskDescription = form.elements[1].value;
+
+        const task = document.createElement("li");
+        task.classList.add("task-card");
+        task.innerHTML = `
+            <h4 class="task-title">${taskTitle}</h4>
+            <span class="check-icon"><img src="css/images/checkbox.svg" alt=""></span>
+        `;
+
+        tasksSection.appendChild(task);
+    });
+
+})();

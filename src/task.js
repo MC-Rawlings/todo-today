@@ -1,5 +1,7 @@
- export const createTask = (name, description, dueDate, priority) => {
-    let isChecked = false;
+ export const createTask = (name, description, dueDate=undefined,
+    priority=undefined) => {
+
+        let isChecked = false;
 
     const getName = () => name;
     const getDescription = () => description;
