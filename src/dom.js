@@ -50,9 +50,14 @@ const addTask = (() => {
         task.innerHTML = `
                 <div class="check-title">
                     <span class="check-icon"><img src="css/images/checkbox.svg" alt=""></span>
-                    <h4 class="task-title">dishes</h4>
+                    <h4 class="task-title">${taskTitle}</h4>
                 </div>
-                <p class="task-description">Do dishes before 10AM</p>
+                <p class="task-description">${taskDescription}</p>
+                <div class="task-options">
+                    <img src="css/images/flag-grey.svg" alt="" class="priority-flag">
+                    <img src="css/images/edit.svg" alt="" class="task-option-btn task-edit">
+                    <img src="css/images/delete.svg" alt="" class="task-option-btn task-delete">
+                </div>
         `;
 
         tasksSection.appendChild(task);
