@@ -1,2 +1,2 @@
-import {} from './dom'
+import {} from './dom';
 

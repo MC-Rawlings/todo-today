@@ -1,7 +1,7 @@
 import {createTask} from './task'
 
 
-    const modal = document.querySelector(".modal-bg");
+const modal = document.querySelector(".modal-bg");
 
 export const toggleLists = (() => {
     const toggleBtn = document.querySelector(".toggle-lists");
@@ -26,12 +26,11 @@ export const closeModal = (() => {
 
 export const openModal = (() => {
     const addTaskBtn = document.querySelector(".tasks-add-btn");
-    const modal = document.querySelector(".modal-bg");
 
     addTaskBtn.addEventListener("click", () => {
     modal.style.display = "block";
 
-})
+    })
 
 })();
 
