@@ -213,7 +213,7 @@ body {
 .add-task__modal {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: flex-start;
     padding: 2em;
     position: fixed;
@@ -221,7 +221,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 35em;
-    height: 50em;
+    height: auto;
     max-width: 100vw;
     font-size: 0.75em;
     font-family: "Boogaloo", sans-serif;
@@ -281,10 +281,15 @@ body {
     font-size: 1.5em;
 }
 
-.priority-selection {
+.priority-section {
     display: flex;
-    justify-content: space-between;
-    width: auto;
+    align-items: center;
+    margin: 1.5rem 0;
+}
+
+.priority-heading {
+    margin-top: 1.5rem;
+    margin-bottom: -2.5rem;
 }
 
 

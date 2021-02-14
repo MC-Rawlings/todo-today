@@ -16,18 +16,25 @@
 
     <div class="modal-bg">
         <div class="add-task__modal">
-            <img src="css/images/undraw_Process_re_gws7.svg" alt="" class="modal-header">
             <form action="" class="add-task__form">
                 <label for="title">TITLE:</label>
                 <input type="text" id="title">
                 <label for="description">DESCRIPTION:</label>
                 <textarea type="text" id="description" rows="4"></textarea>
+
+                <h5 class="priority-heading">PRIORITY:</h5>
+                <div class="priority-section">
+
+                    <input type="radio" name="priority" id="high">
+                    <label for="high"><img src="css/images/flag-red.svg" alt="red flag" class="priority-radio-btns"></label>
+
+                    <input type="radio" name="priority" id="high">
+                    <label for="high"><img src="css/images/flag-orange.svg" alt="red flag" class="priority-radio-btns"></label>
+
+                    <input type="radio" name="priority" id="high">
+                    <label for="high"><img src="css/images/flag-green.svg" alt="red flag" class="priority-radio-btns"></label>
+                </div>
             </form>
-            <div class="priority-selection">
-                <img src="css/images/flag-red.svg" alt="" class="priority-flags">
-                <img src="css/images/flag-orange.svg" alt="" class="priority-flags">
-                <img src="css/images/flag-green.svg" alt="" class="priority-flags">
-            </div>
             <div class="add-task__btns">
                 <div id="add-task__confirm" class="bs-btn">CONFIRM</div>
                 <div id="add-task__cancel" class="bs-btn">CANCEL</div>
