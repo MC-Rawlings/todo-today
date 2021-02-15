@@ -10,9 +10,10 @@
     --clr-bg: #E5E5E5;
 }
 
+
 body {
     font-family: 'Montserrat', sans-serif;
-    min-height: 100%;
+    min-height: 100vh;
     max-width: 100vw;
 }
 
@@ -26,6 +27,7 @@ body {
 
 .logo img {
     cursor: pointer;
+    margin: 0.5rem;
     width: 10rem;
 }
 
@@ -42,7 +44,6 @@ body {
     background-color: var(--clr-secondary);
     border-radius: 5px;
     transition: 200ms;
-    margin: 0 1rem;
 }
 
 .btn-login:hover {
@@ -87,7 +88,7 @@ body {
     background-color: var(--clr-bg);
     display: none;
     position: fixed;
-    height: 100%;
+    height: 100vh;
     width: 100vw;
     transition: 200ms;
 }
@@ -108,6 +109,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-right: -6rem;
+    max-width: 100%;
 }
 
 .tasks-section {
@@ -116,7 +119,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 95%;
+    width: 92.5%;
     height: auto;
     max-height: 47.5vh;
     overflow-y: scroll;
@@ -140,6 +143,14 @@ body {
 .check-title {
     display: flex;
     align-items: center;
+    width: 50%;
+}
+
+.task-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
 }
 
 .check-icon img{
@@ -154,6 +165,7 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 25%;
+    display: none;
 }
 
 .task-options {
@@ -330,7 +342,7 @@ body {
     body {
         min-height: 100vh;
         display: grid;
-        grid-template-columns: 20rem auto;
+        grid-template-columns: 12rem auto;
         grid-template-rows: 1fr 3fr;
     }
 
@@ -339,7 +351,7 @@ body {
         grid-column-end: 2;
         grid-row-start: 1;
         grid-row-end: end;
-        width: 18rem;
+        width: auto;
         background: var(--clr-bg);
         padding-top: 2rem;
     }
@@ -355,32 +367,37 @@ body {
 
     .header-main {
         grid-column-start: 2;
-        grid-column-end: end;
+        grid-column-end: 4;
         grid-row-start: 1;
         grid-row-end: 2;
-        margin: 0 0 0 2%;
     }
 
-    .logo img{
-        width: 16rem;
+    .logo img {
+        width: 14rem;
     }
 
     .main-content {
         grid-column-start: 2;
-        grid-column-end: end;
+        grid-column-end: 4;
         grid-row-start: 2;
+        grid-row-end: end;
     }
 
     .tasks-section {
         margin-top: 2rem;
+        width: 95%;
     }
 
-    .task-options {
+    .check-title {
         width: 30%;
     }
 
-    .priority-flag, .task-delete {
-        display: block;
+    .task-description {
+        display: inline-flex;
+    }
+
+    .task-options {
+        width: auto;
     }
 
     .btn-login, .tasks-add-btn {
@@ -388,8 +405,18 @@ body {
         border-radius: 10px;
         width: 8rem;
         height: 3rem;
-        margin-right: 5%;
         margin-left: 1.5em;
+    }
+
+    .btn-login {
+        margin-right: 2%;
+    }
+
+    .deco-shape {
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
     }
 }
 
@@ -397,10 +424,15 @@ body {
 
     body {
         margin-right: 4rem;
+        grid-template-columns: 20rem auto;
     }
 
     .task-options {
         width: 20%;
+    }
+
+    .priority-flag, .task-delete {
+        display: block;
     }
 }
 
