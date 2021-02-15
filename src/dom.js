@@ -10,6 +10,7 @@ const toggleLists = (() => {
         lists.style.display = "none";
 
     })
+
 })();
 
 const closeModal = (() => {
