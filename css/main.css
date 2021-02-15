@@ -87,7 +87,7 @@ body {
     align-items: center;
     background-color: var(--clr-bg);
     display: none;
-    position: fixed;
+    position: relative;
     height: 100vh;
     width: 100vw;
     transition: 200ms;
@@ -361,9 +361,18 @@ body {
         grid-column-end: 2;
         grid-row-start: 1;
         grid-row-end: end;
-        width: 18rem;
+        width: auto;
         font-size: 0.75rem;
+        display: flex;
     }
+
+    .title-lists {
+        margin-left: 0;
+    }
+
+    .toggle-lists {
+        display: none;
+    };
 
     .header-main {
         grid-column-start: 2;
