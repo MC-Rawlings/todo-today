@@ -1,4 +1,12 @@
-const lists = [];
+export const allLists = (() => {
+    const lists = [];
+
+    const addList = list => lists.push(list);
+    const getLists = () => lists
+
+    return {getLists};
+
+})();
 
 export const createList = (name) => {
     const list = [];

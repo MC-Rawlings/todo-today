@@ -62,6 +62,7 @@ const addTask = (() => {
         tasksSection.appendChild(task);
         form.reset();
         modal.style.display = "none";
+        createTask(taskTitle, taskDescription);
     });
 
 })();
