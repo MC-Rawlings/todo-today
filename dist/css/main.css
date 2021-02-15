@@ -231,9 +231,10 @@ body {
 
 .add-task__btns {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 100%;
     height: 2.5rem;
+    margin-top: 1rem;
 
 }
 
@@ -244,7 +245,8 @@ body {
     align-items: center;
     font-size: 1.5em;;
     border-radius: 7.5px;
-    width: 45%;
+    width: 25%;
+    margin: 0.25em 0.5em;
     background: #fff;
 }
 
@@ -374,7 +376,7 @@ body {
     }
 
     .task-options {
-        width: auto;
+        width: 30%;
     }
 
     .priority-flag, .task-delete {
