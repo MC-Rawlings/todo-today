@@ -32,6 +32,29 @@ const openModal = (() => {
 
 })();
 
+const appendTask = (task) => {
+
+    const element = document.createElement("li");
+    element.classList.add("task-card");
+    element.innerHTML = `
+        <div class="check-title">
+            <span class="check-icon"><img src="css/images/checkbox.svg" alt=""></span>
+            <h4 class="task-title">${task.getName()}</h4>
+        </div>
+        <p class="task-description">${task.getDescription()}</p>
+        <div class="task-options">
+            <img src="css/images/flag-grey.svg" alt="" class="priority-flag">
+            <img src="css/images/edit.svg" alt="" class="task-option-btn task-edit">
+            <img src="css/images/delete.svg" alt="" class="task-option-btn task-delete">
+        </div>
+    `;
+
+    return element;
+
+
+}
+
 export {toggleLists,
         closeModal,
-        openModal};
+        openModal,
+        appendTask};
