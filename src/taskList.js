@@ -1,14 +1,4 @@
-export const allLists = (() => {
-    const lists = [];
-
-    const addList = list => lists.push(list);
-    const getLists = () => lists
-
-    return {getLists};
-
-})();
-
-export const createList = (name) => {
+const createList = (name) => {
     const list = [];
 
     const getList = () => {
@@ -22,6 +12,11 @@ export const createList = (name) => {
         list.push(task);
     }
 
-    return {addTask, getList, getName, changeName};
+    return {addTask,
+            getList,
+            getName,
+            changeName};
 
 }
+
+export {createList};

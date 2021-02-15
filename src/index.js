@@ -1,6 +1,5 @@
 import {} from './dom';
-import {createList, allLists} from './taskList';
+import {createTask} from './task';
 
 
-const homeList = createList("Home");
-allLists.addList(newList);
+

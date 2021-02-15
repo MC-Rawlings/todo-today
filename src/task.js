@@ -1,6 +1,5 @@
- export const createTask = (name, description, priority=undefined) => {
-
-    let isChecked = false;
+ const createTask = (name, description, priority=undefined) => {
+    const isChecked = false;
 
     const getName = () => name;
     const getDescription = () => description;
@@ -10,9 +9,7 @@
 
     const changeName = (newName) => name = newName;
     const changeDescription = (newDesc) => description = newDesc;
-    const changeDate = (newDate) => dueDate = newDate;
     const changePriority = (newPriority) => priority = newPriority;
-
     const toggleChecked = () => {
         if (isChecked === true) {
             isChecked = false;
@@ -21,5 +18,14 @@
         }
     }
 
-    return {getName, getDescription, getPriority, getStatus, changeName, changeDescription, changeDate, changePriority, toggleChecked};
+    return {getName,
+            getDescription,
+            getPriority,
+            getStatus,
+            changeName,
+            changeDescription,
+            changePriority,
+            toggleChecked};
 }
+
+export {createTask};
