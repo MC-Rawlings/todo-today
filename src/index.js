@@ -1,4 +1,4 @@
-import _, { appendTask } from './dom';
+import {appendTask} from './dom';
 import {createTask} from './task';
 import {createList} from './taskList';
 
@@ -13,3 +13,4 @@ tasksSection.appendChild(appendTask(exampleTask));
 
 
 
+export {homeList};

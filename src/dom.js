@@ -1,3 +1,6 @@
+import {createTask} from './task';
+import {homeList} from './index';
+
 const modal = document.querySelector(".modal-bg");
 
 const toggleLists = (() => {
@@ -54,7 +57,25 @@ const appendTask = (task) => {
 
 }
 
+const addTask = (() => {
+    const confirmBtn = document.querySelector("#add-task__confirm");
+    const form = document.querySelector("form");
+    const tasksSection = document.querySelector(".tasks-section");
+
+    confirmBtn.addEventListener("click", () => {
+        const newTask = createTask(form.elements[0].value, form.elements[1].value);
+        homeList.addTask(newTask);
+        tasksSection.appendChild(appendTask(newTask));
+        form.reset();
+        modal.style.display = "none";
+    })
+
+})();
+
+
+
 export {toggleLists,
         closeModal,
         openModal,
+        addTask,
         appendTask};
