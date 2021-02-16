@@ -3,6 +3,8 @@ import {homeList} from './index';
 
 const modal = document.querySelector(".modal-bg");
 
+
+// Toggle task lists for mobile
 const toggleLists = (() => {
     const toggleBtn = document.querySelector(".toggle-lists");
     const lists = document.querySelector(".lists");
@@ -16,6 +18,7 @@ const toggleLists = (() => {
 
 })();
 
+// Toggle add-task modal
 const closeModal = (() => {
     const cancelBtn = document.querySelector("#add-task__cancel");
 
@@ -35,9 +38,12 @@ const openModal = (() => {
 
 })();
 
+
+// Create task node
 const appendTask = (task) => {
 
     const element = document.createElement("li");
+    element.dataset.title = task.getName();
     element.classList.add("task-card");
     element.innerHTML = `
         <div class="check-title">
@@ -57,6 +63,7 @@ const appendTask = (task) => {
 
 }
 
+// appends task
 const addTask = (() => {
     const confirmBtn = document.querySelector("#add-task__confirm");
     const form = document.querySelector("form");
