@@ -1,5 +1,5 @@
  const createTask = (name, description, priority=undefined) => {
-    const isChecked = false;
+    let isChecked = false;
 
     const getName = () => name;
     const getDescription = () => description;

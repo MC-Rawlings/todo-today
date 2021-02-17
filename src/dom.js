@@ -47,7 +47,7 @@ const appendTask = (task) => {
     element.classList.add("task-card");
     element.innerHTML = `
         <div class="check-title">
-            <span class="check-icon"><img src="css/images/checkbox.svg" alt=""></span>
+            <img src="css/images/checkbox.svg" alt="" class="check-icon">
             <h4 class="task-title">${task.getName()}</h4>
         </div>
         <p class="task-description">${task.getDescription()}</p>

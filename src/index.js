@@ -16,4 +16,8 @@ console.log(homeList.getList());
 tasksSection.appendChild(appendTask(exampleTask));
 tasksSection.appendChild(appendTask(exampleTask2));
 
-console.log(homeList.getList()[0].getName());
+console.log(homeList.getList()[0].getStatus());
+homeList.getList()[0].toggleChecked();
+console.log(homeList.getList()[0].getStatus());
+
+export {homeList}
