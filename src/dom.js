@@ -1,5 +1,5 @@
 import {createTask} from './task';
-import {homeList} from './index';
+import {createList} from './taskList';
 
 const modal = document.querySelector(".modal-bg");
 
@@ -78,6 +78,8 @@ const addTask = (() => {
     })
 
 })();
+
+
 
 
 
