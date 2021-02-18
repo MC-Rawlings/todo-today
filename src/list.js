@@ -28,4 +28,6 @@ const getList = () => list;
     }
 }
 
-export {createList}
+export {
+    createList
+}
