@@ -1,0 +1,1 @@
+(()=>{"use strict";const e=(e=>{let t=[];return{getTitle:()=>e,getList:()=>t,setTitle:t=>e=t,addTask:e=>t.push(e),removeTask:e=>{let s=t.findIndex((e=>{e.getTitle}));t.splice(s,1)}}})("Test");console.log(e.getTitle()),console.log(e.getList()),e.setTitle("TestChanged"),console.log(e.getTitle())})();

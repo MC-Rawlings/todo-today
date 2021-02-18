@@ -3,7 +3,7 @@ const createList = (title) => {
 
     // Getters
     const getTitle = () => title;
-    const getList = () => list;
+const getList = () => list;
 
     // Setters
     const setTitle = newTitle => title = newTitle;
@@ -18,4 +18,14 @@ const createList = (title) => {
 
         list.splice(index, 1);
     }
+
+    return {
+        getTitle,
+        getList,
+        setTitle,
+        addTask,
+        removeTask
+    }
 }
+
+export {createList}
