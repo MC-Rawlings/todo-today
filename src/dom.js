@@ -1,3 +1,9 @@
+import {createList} from './list'
+import {createTask} from './task'
+import {defaultList} from './index'
+
+
+// Append to DOM
 const appendTask = task => {
     const taskTitle = task.getTitle();
     const taskDescription = task.getDescription();
@@ -29,6 +35,40 @@ const appendList = list => {
 
     document.querySelector(".lists").appendChild(toAppend);
 }
+
+
+// UI functions
+const openModal = () => {
+    document.querySelector(".modal-bg").style.display = "flex";
+}
+
+const closeModal = () => {
+    document.querySelector(".modal-bg").style.display = "none";
+
+}
+
+
+// Calling all eventListeners
+const eventListeners = (() => {
+    // Open add-task modal
+    document.querySelector(".tasks-add-btn").addEventListener("click", openModal);
+
+    // Cancel add-task form
+    document.querySelector("#add-task__cancel").addEventListener("click", closeModal);
+
+    // Confirm add-task form
+    document.querySelector("#add-task__confirm").addEventListener("click", () => {
+        const form = document.querySelector("form");
+        const newTask = createTask(form.elements[0].value, form.elements[1].value);
+        defaultList.addTask(newTask);
+        appendTask(newTask);
+
+        form.reset();
+        closeModal();
+
+    })
+})();
+
 
 export {
     appendTask,
