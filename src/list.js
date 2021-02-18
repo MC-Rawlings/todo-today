@@ -1,18 +1,26 @@
+import {createTask} from './task'
+
 const createList = (title) => {
     let list = [];
+    let isActive = false;
 
     // Getters
     const getTitle = () => title;
-const getList = () => list;
+    const getList = () => list;
 
     // Setters
     const setTitle = newTitle => title = newTitle;
+    const toggleIsActive = () => {
+        isActive === false ?
+        isActive = true :
+        isActive = false;
+    }
 
     // Methods
     const addTask = task => list.push(task);
 
     const removeTask = taskTitle => {
-        let index = list.findIndex(task => {
+        let index = list.findIndexconsole.log(rootList.getList()[0].getTitle());(task => {
             task.getTitle === taskTitle;
         })
 
@@ -24,14 +32,12 @@ const getList = () => list;
         getList,
         setTitle,
         addTask,
-        removeTask
+        removeTask,
+        toggleIsActive
     }
 }
 
-// Create list for all other lists created
-const rootList = createList("Root");
 
 export {
-    createList,
-    rootList
+    createList
 }
