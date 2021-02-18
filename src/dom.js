@@ -1,16 +1,15 @@
-import {createList} from './list'
-import {createTask} from './task'
-import {defaultList} from './index'
-
+import { createList } from './list';
+import { createTask } from './task';
+import { defaultList } from './index';
 
 // Append to DOM
-const appendTask = task => {
-    const taskTitle = task.getTitle();
-    const taskDescription = task.getDescription();
+const appendTask = (task) => {
+  const taskTitle = task.getTitle();
+  const taskDescription = task.getDescription();
 
-    const toAppend = document.createElement("li");
-    toAppend.classList.add("task-card");
-    toAppend.innerHTML = `
+  const toAppend = document.createElement('li');
+  toAppend.classList.add('task-card');
+  toAppend.innerHTML = `
         <div class="check-title">
             <img src="css/images/checkbox.svg" alt="" class="check-icon">
             <h4 class="task-title">${taskTitle}</h4>
@@ -23,54 +22,48 @@ const appendTask = task => {
         </div>
     `;
 
-    document.querySelector(".tasks-section").appendChild(toAppend);
-}
+  document.querySelector('.tasks-section').appendChild(toAppend);
+};
 
-const appendList = list => {
-    const listTitle = list.getTitle();
+const appendList = (list) => {
+  const listTitle = list.getTitle();
 
-    const toAppend = document.createElement("li");
-    toAppend.classList.add("list-item");
-    toAppend.innerText = `${listTitle}`;
+  const toAppend = document.createElement('li');
+  toAppend.classList.add('list-item');
+  toAppend.innerText = `${listTitle}`;
 
-    document.querySelector(".lists").appendChild(toAppend);
-}
-
+  document.querySelector('.lists').appendChild(toAppend);
+};
 
 // UI functions
 const openModal = () => {
-    document.querySelector(".modal-bg").style.display = "flex";
-}
+  document.querySelector('.modal-bg').style.display = 'flex';
+};
 
 const closeModal = () => {
-    document.querySelector(".modal-bg").style.display = "none";
-
-}
-
+  document.querySelector('.modal-bg').style.display = 'none';
+};
 
 // Calling all eventListeners
 const eventListeners = (() => {
-    // Open add-task modal
-    document.querySelector(".tasks-add-btn").addEventListener("click", openModal);
+  // Open add-task modal
+  document.querySelector('.tasks-add-btn').addEventListener('click', openModal);
 
-    // Cancel add-task form
-    document.querySelector("#add-task__cancel").addEventListener("click", closeModal);
+  // Cancel add-task form
+  document
+    .querySelector('#add-task__cancel')
+    .addEventListener('click', closeModal);
 
-    // Confirm add-task form
-    document.querySelector("#add-task__confirm").addEventListener("click", () => {
-        const form = document.querySelector("form");
-        const newTask = createTask(form.elements[0].value, form.elements[1].value);
-        defaultList.addTask(newTask);
-        appendTask(newTask);
+  // Confirm add-task form
+  document.querySelector('#add-task__confirm').addEventListener('click', () => {
+    const form = document.querySelector('form');
+    const newTask = createTask(form.elements[0].value, form.elements[1].value);
+    defaultList.addTask(newTask);
+    appendTask(newTask);
 
-        form.reset();
-        closeModal();
-
-    })
+    form.reset();
+    closeModal();
+  });
 })();
 
-
-export {
-    appendTask,
-    appendList
-}   
+export { appendTask, appendList };

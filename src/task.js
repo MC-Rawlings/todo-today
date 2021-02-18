@@ -1,31 +1,32 @@
 const createTask = (title, description) => {
-    let isChecked = false;
+  let isChecked = false;
 
-    // Getters
-    const getTitle = () => title;
-    const getDescription = () => description;
-    const getIsChecked = () => isChecked;
+  // Getters
+  const getTitle = () => title;
+  const getDescription = () => description;
+  const getIsChecked = () => isChecked;
 
-    // Setters
-    const setTitle = newTitle => title = newTitle;
-    const setDescription = newDescription => description = newDescription;
+  // Setters
+  const setTitle = (newTitle) => {
+    const tempTitle = newTitle;
+    return tempTitle;
+  };
 
-    const toggleCheck = () => {
-        isChecked === false ?
-        isChecked = true :
-        isChecked = false;
-    }
+  const setDescription = (newDescription) => (description = newDescription);
 
-    return {
-        getTitle,
-        getDescription,
-        getIsChecked,
-        setTitle,
-        setDescription,
-        toggleCheck
-    }
-}
+  const toggleCheck = () => {
+    // eslint-disable-next-line no-unused-expressions
+    isChecked === false ? (isChecked = true) : (isChecked = false);
+  };
 
-export {
-    createTask
-}
+  return {
+    getTitle,
+    getDescription,
+    getIsChecked,
+    setTitle,
+    setDescription,
+    toggleCheck,
+  };
+};
+
+export { createTask };
