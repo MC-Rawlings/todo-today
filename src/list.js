@@ -28,6 +28,10 @@ const getList = () => list;
     }
 }
 
+// Create list for all other lists created
+const rootList = createList("Root");
+
 export {
-    createList
+    createList,
+    rootList
 }

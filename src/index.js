@@ -1,2 +1,4 @@
-import {createTask} from './task.js'
+import {createList, rootList} from './list'
+
+console.log(rootList.getTitle());
 
