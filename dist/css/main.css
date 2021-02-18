@@ -96,7 +96,8 @@ body {
 .list-item {
     cursor: pointer;
     margin: 1rem;
-    font-size: 1.2em;
+    font-size: 1.5em;
+    letter-spacing: 3px;
     color: var(--clr-primary);
     transition: 200ms;
 }
@@ -166,7 +167,6 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 25%;
-    display: none;
 }
 
 .task-options {
@@ -399,11 +399,11 @@ body {
     }
 
     .check-title {
-        width: 30%;
+        width: 20%;
     }
 
     .task-description {
-        display: inline-flex;
+        display: inline-block;
     }
 
     .task-options {

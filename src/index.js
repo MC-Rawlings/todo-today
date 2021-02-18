@@ -1,6 +1,6 @@
 import {createList} from './list'
 import {createTask} from './task'
-import {appendTask} from './dom'
+import {appendList, appendTask} from './dom'
 
 const rootList = createList("Root");
 const defaultList = createList("Home");
@@ -13,3 +13,4 @@ console.log(defaultTask.getTitle());
 console.log(defaultTask.getDescription());
 
 appendTask(defaultTask);
+appendList(defaultList);

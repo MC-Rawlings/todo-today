@@ -20,6 +20,17 @@ const appendTask = task => {
     document.querySelector(".tasks-section").appendChild(toAppend);
 }
 
+const appendList = list => {
+    const listTitle = list.getTitle();
+
+    const toAppend = document.createElement("li");
+    toAppend.classList.add("list-item");
+    toAppend.innerText = `${listTitle}`;
+
+    document.querySelector(".lists").appendChild(toAppend);
+}
+
 export {
-    appendTask
+    appendTask,
+    appendList
 }
