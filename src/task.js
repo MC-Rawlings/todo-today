@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-return-assign */
 const createTask = (title, description) => {
   let isChecked = false;
 
@@ -29,4 +31,4 @@ const createTask = (title, description) => {
   };
 };
 
-export { createTask };
+export default createTask;

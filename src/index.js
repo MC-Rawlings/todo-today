@@ -1,6 +1,7 @@
+/* eslint-disable import/no-cycle */
 import { appendTask, appendList } from './dom';
-import { createList } from './list';
-import { createTask } from './task';
+import createList from './list';
+import createTask from './task';
 
 // load default examples
 const rootList = createList('Root');
@@ -13,4 +14,5 @@ rootList.addTask(defaultList);
 appendTask(defaultTask);
 appendList(defaultList);
 
-export { defaultList }; // there may be more than one export here
+// eslint-disable-next-line import/prefer-default-export
+export { defaultList };
