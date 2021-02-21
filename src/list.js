@@ -1,7 +1,9 @@
-import { createTask } from './task';
+/* eslint-disable no-return-assign */
+// import { createTask } from './task';
+import { rootList } from './index';
 
 const createList = (title) => {
-  let list = [];
+  const list = [];
   let isActive = false;
 
   // Getters
@@ -18,7 +20,7 @@ const createList = (title) => {
   const addTask = (task) => list.push(task);
 
   const removeTask = (taskTitle) => {
-    let index = list.findIndexconsole.log(rootList.getList()[0].getTitle());
+    const index = list.findIndexconsole.log(rootList.getList()[0].getTitle());
     (task) => {
       task.getTitle === taskTitle;
     };

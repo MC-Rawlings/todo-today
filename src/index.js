@@ -1,4 +1,4 @@
-import { appendTask, appendList, toggleModal } from './dom';
+import { appendTask, appendList } from './dom';
 import { createList } from './list';
 import { createTask } from './task';
 
@@ -13,4 +13,4 @@ rootList.addTask(defaultList);
 appendTask(defaultTask);
 appendList(defaultList);
 
-export { defaultList };
+export { defaultList }; // there may be more than one export here
