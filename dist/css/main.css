@@ -113,6 +113,13 @@ body {
   max-width: 100%;
 }
 
+.tasks-section__title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--clr-primary);
+  margin: 2rem 2rem;
+}
+
 .tasks-section {
   font-weight: 600;
   display: flex;
@@ -379,7 +386,7 @@ body {
   }
 
   .logo img {
-    width: 14rem;
+    width: 16rem;
   }
 
   .main-content {
@@ -387,6 +394,11 @@ body {
     grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: end;
+  }
+
+  .tasks-section__title {
+    font-size: 3rem;
+    margin-top: 0;
   }
 
   .tasks-section {
