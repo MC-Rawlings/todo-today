@@ -1,5 +1,5 @@
-import { createList } from './list';
-import { createTask } from './task';
+import createTask from './task';
+// eslint-disable-next-line import/no-cycle
 import { defaultList } from './index';
 
 // Append to DOM
@@ -45,6 +45,7 @@ const closeModal = () => {
 };
 
 // Calling all eventListeners
+// eslint-disable-next-line no-unused-vars
 const eventListeners = (() => {
   // Open add-task modal
   document.querySelector('.tasks-add-btn').addEventListener('click', openModal);
