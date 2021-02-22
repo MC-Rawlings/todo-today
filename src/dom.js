@@ -16,7 +16,7 @@ const appendTask = (task) => {
         </div>
         <p class="task-description">${taskDescription}</p>
         <div class="task-options">
-            <img src="css/images/flag-grey.svg" alt="" class="priority-flag">
+            <img src="css/images/flag-orange.svg" alt="" class="priority-flag">
             <img src="css/images/edit.svg" alt="" class="task-option-btn task-edit">
             <img src="css/images/delete.svg" alt="" class="task-option-btn task-delete">
         </div>
@@ -58,8 +58,9 @@ const eventListeners = (() => {
   // Confirm add-task form
   document.querySelector('#add-task__confirm').addEventListener('click', () => {
     const form = document.querySelector('form');
-    const newTask = createTask(form.elements[0].value, form.elements[1].value);
-    rootList.getList()[0].addToList(newTask);
+    const newTask = createTask(form.elements[0].value, form.elements[1].value, form.elements[2].id);
+    const defaultList = rootList.getList()[0];
+    defaultList.addToList(newTask);
     appendTask(newTask);
 
     form.reset();
