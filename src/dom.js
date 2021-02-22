@@ -65,6 +65,14 @@ const eventListeners = (() => {
     form.reset();
     closeModal();
   });
+
+  // Open my-list menu - mobile
+  document.querySelector('.toggle-lists').addEventListener('click', () => {
+    let lists = document.querySelector('.lists');
+    lists.style.display === 'none'
+      ? (lists.style.display = 'flex')
+      : (lists.style.display = 'none');
+  });
 })();
 
 export { appendTask, appendList };
