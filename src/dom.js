@@ -1,6 +1,6 @@
-import createTask from './task';
 // eslint-disable-next-line import/no-cycle
-import { defaultList } from './index';
+import rootList from './index';
+import createTask from './task';
 
 // Append to DOM
 const appendTask = (task) => {
@@ -59,7 +59,7 @@ const eventListeners = (() => {
   document.querySelector('#add-task__confirm').addEventListener('click', () => {
     const form = document.querySelector('form');
     const newTask = createTask(form.elements[0].value, form.elements[1].value);
-    defaultList.addTask(newTask);
+    rootList.getList()[0].addToList(newTask);
     appendTask(newTask);
 
     form.reset();
@@ -68,7 +68,8 @@ const eventListeners = (() => {
 
   // Open my-list menu - mobile
   document.querySelector('.toggle-lists').addEventListener('click', () => {
-    let lists = document.querySelector('.lists');
+    const lists = document.querySelector('.lists');
+    // eslint-disable-next-line no-unused-expressions
     lists.style.display === 'none'
       ? (lists.style.display = 'flex')
       : (lists.style.display = 'none');

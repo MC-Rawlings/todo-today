@@ -9,11 +9,11 @@ const defaultList = createList('Home');
 defaultList.toggleIsActive();
 const defaultTask = createTask('Example', 'Example of a to-do item');
 
-defaultList.addTask(defaultTask);
-rootList.addTask(defaultList);
+defaultList.addToList(defaultTask);
+rootList.addToList(defaultList);
 
 appendTask(defaultTask);
 appendList(defaultList);
 
 // eslint-disable-next-line import/prefer-default-export
-export { defaultList };
+export default rootList;

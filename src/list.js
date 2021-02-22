@@ -21,7 +21,7 @@ const createList = (title) => {
   };
 
   // Methods
-  const addTask = (task) => list.push(task);
+  const addToList = (task) => list.push(task);
 
   const removeTask = (taskTitle) => {
     const index = list.findIndexconsole.log(rootList.getList()[0].getTitle());
@@ -38,7 +38,7 @@ const createList = (title) => {
     getIsActive,
     setTitle,
     toggleIsActive,
-    addTask,
+    addToList,
     removeTask,
   };
 };
