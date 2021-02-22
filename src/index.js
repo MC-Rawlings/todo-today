@@ -6,6 +6,7 @@ import createTask from './task';
 // load default examples
 const rootList = createList('Root');
 const defaultList = createList('Home');
+defaultList.toggleIsActive();
 const defaultTask = createTask('Example', 'Example of a to-do item');
 
 defaultList.addTask(defaultTask);

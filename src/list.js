@@ -11,6 +11,7 @@ const createList = (title) => {
   // Getters
   const getTitle = () => title;
   const getList = () => list;
+  const getIsActive = () => isActive;
 
   // Setters
   // eslint-disable-next-line no-param-reassign
@@ -34,10 +35,11 @@ const createList = (title) => {
   return {
     getTitle,
     getList,
+    getIsActive,
     setTitle,
+    toggleIsActive,
     addTask,
     removeTask,
-    toggleIsActive,
   };
 };
 
