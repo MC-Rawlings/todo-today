@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable no-return-assign */
 // import { createTask } from './task';
-import { rootList } from './index';
+// eslint-disable-next-line import/no-cycle
+import rootList from './index';
 
 const createList = (title) => {
   const list = [];
@@ -11,6 +13,7 @@ const createList = (title) => {
   const getList = () => list;
 
   // Setters
+  // eslint-disable-next-line no-param-reassign
   const setTitle = (newTitle) => (title = newTitle);
   const toggleIsActive = () => {
     isActive === false ? (isActive = true) : (isActive = false);
@@ -38,4 +41,4 @@ const createList = (title) => {
   };
 };
 
-export { createList };
+export default createList;
