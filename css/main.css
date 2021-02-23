@@ -101,6 +101,24 @@ body {
   transition: 200ms;
 }
 
+.add-list__btn {
+  cursor: pointer;
+  color: var(--clr-primary);
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  padding: 0.25rem 2.5rem;
+  max-width: 10rem;
+  text-align: center;
+  white-space: nowrap;
+  transition: 200ms;
+}
+
+.add-list__btn:hover {
+  color: var(--clr-bg);
+  background-color: var(--clr-primary);
+}
+
 .list-item:hover {
   transform: translateY(-0.4rem);
 }
