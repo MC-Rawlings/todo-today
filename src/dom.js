@@ -61,6 +61,7 @@ const eventListeners = (() => {
     const newTask = createTask(
       form.elements[0].value,
       form.elements[1].value,
+      // eslint-disable-next-line comma-dangle
       form.elements[2].id
     );
     const defaultList = rootList.getList()[0];

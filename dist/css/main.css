@@ -115,7 +115,7 @@ body {
 }
 
 .add-list__btn:hover {
-  color: var(--clr-bg);
+  color: var(--clr-secondary);
   background-color: var(--clr-primary);
 }
 
