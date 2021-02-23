@@ -37,11 +37,11 @@ const appendList = (list) => {
 
 // UI functions
 const openModal = () => {
-  document.querySelector('.modal-bg').style.display = 'flex';
+  document.querySelector('.modal-bg__task').style.display = 'flex';
 };
 
 const closeModal = () => {
-  document.querySelector('.modal-bg').style.display = 'none';
+  document.querySelector('.modal-bg__task').style.display = 'none';
 };
 
 // Calling all eventListeners
@@ -57,7 +57,7 @@ const eventListeners = (() => {
 
   // Confirm add-task form
   document.querySelector('#add-task__confirm').addEventListener('click', () => {
-    const form = document.querySelector('form');
+    const form = document.querySelector('.add-task__form');
     const newTask = createTask(
       form.elements[0].value,
       form.elements[1].value,

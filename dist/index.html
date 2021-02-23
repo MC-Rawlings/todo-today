@@ -13,11 +13,28 @@
     <title>Todo Today || Your easy-to-use to-do list</title>
 </head>
 <body>
-    <div class="modal-bg">
+    <!-- Add-list modal -->
+    <div class="modal-bg__list">
+        <div class="add-list__modal">
+            <img src="./css/images/list-illustration.svg" alt="" class="list-illustration">
+            <form action="" class="add-list__form">
+                <label for="list-title">TITLE:</label>
+                <input type="text" id="list-title">
+            </form>
+
+            <div class="add-task__btns">
+                <div id="add-list__confirm" class="bs-btn">CONFIRM</div>
+                <div id="add-list__cancel" class="bs-btn">CANCEL</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add-task modal -->
+    <div class="modal-bg__task">
         <div class="add-task__modal">
             <form action="" class="add-task__form">
-                <label for="title">TITLE:</label>
-                <input type="text" id="title">
+                <label for="task-title">TITLE:</label>
+                <input type="text" id="task-title">
                 <label for="description">DESCRIPTION:</label>
                 <textarea type="text" id="description" rows="4"></textarea>
 
