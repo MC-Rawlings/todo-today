@@ -15,7 +15,5 @@ rootList.addToList(defaultList);
 appendTask(defaultTask);
 appendList(defaultList);
 
-console.log(rootList.getList()[0].getList()[0].getPriority());
-
 // eslint-disable-next-line import/prefer-default-export
 export default rootList;

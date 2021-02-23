@@ -58,7 +58,11 @@ const eventListeners = (() => {
   // Confirm add-task form
   document.querySelector('#add-task__confirm').addEventListener('click', () => {
     const form = document.querySelector('form');
-    const newTask = createTask(form.elements[0].value, form.elements[1].value, form.elements[2].id);
+    const newTask = createTask(
+      form.elements[0].value,
+      form.elements[1].value,
+      form.elements[2].id
+    );
     const defaultList = rootList.getList()[0];
     defaultList.addToList(newTask);
     appendTask(newTask);
