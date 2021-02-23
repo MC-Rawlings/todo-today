@@ -250,10 +250,6 @@ body {
   display: none;
 }
 
-.modal-bg__list {
-  display: flex;
-}
-
 .add-task__modal, .add-list__modal {
   display: flex;
   flex-direction: column;
