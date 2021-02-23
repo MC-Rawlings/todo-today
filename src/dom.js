@@ -36,24 +36,32 @@ const appendList = (list) => {
 };
 
 // UI functions
-const openModal = () => {
+const openTaskModal = () => {
   document.querySelector('.modal-bg__task').style.display = 'flex';
 };
 
-const closeModal = () => {
+const closeTaskModal = () => {
   document.querySelector('.modal-bg__task').style.display = 'none';
+};
+
+const openListModal = () => {
+  document.querySelector('.modal-bg__list').style.display = 'flex';
+};
+
+const closeListModal = () => {
+  document.querySelector('.modal-bg__list').style.display = 'none';
 };
 
 // Calling all eventListeners
 // eslint-disable-next-line no-unused-vars
 const eventListeners = (() => {
   // Open add-task modal
-  document.querySelector('.tasks-add-btn').addEventListener('click', openModal);
+  document.querySelector('.tasks-add-btn').addEventListener('click', openTaskModal);
 
   // Cancel add-task form
   document
     .querySelector('#add-task__cancel')
-    .addEventListener('click', closeModal);
+    .addEventListener('click', closeTaskModal);
 
   // Confirm add-task form
   document.querySelector('#add-task__confirm').addEventListener('click', () => {
@@ -69,8 +77,14 @@ const eventListeners = (() => {
     appendTask(newTask);
 
     form.reset();
-    closeModal();
+    closeTaskModal();
   });
+
+  // Open add-list modal
+  document.querySelector('.add-list__btn').addEventListener('click', openListModal);
+
+  // Cancel add-list form
+  document.querySelector('#add-list__cancel').addEventListener('click', closeListModal);
 
   // Open my-list menu - mobile
   document.querySelector('.toggle-lists').addEventListener('click', () => {
