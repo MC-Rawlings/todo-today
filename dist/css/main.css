@@ -153,12 +153,12 @@ body {
 }
 
 .task-title {
-  display: flex;
+  display: block;
+  max-width: 200px;
   align-items: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 100%;
 }
 
 .check-icon {
@@ -173,6 +173,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 25%;
+  display: none;
 }
 
 .task-options {
@@ -404,10 +405,6 @@ body {
   .tasks-section {
     margin-top: 2rem;
     width: 95%;
-  }
-
-  .check-title {
-    width: 20%;
   }
 
   .task-description {
