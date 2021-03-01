@@ -3,36 +3,36 @@ import rootList from './index';
 import createTask from './task';
 
 // Append to DOM
-const appendTask = (task) => {
+const createTaskElement = (task) => {
   const taskTitle = task.getTitle();
   const taskDescription = task.getDescription();
 
-  const toAppend = document.createElement('li');
-  toAppend.classList.add('task-card');
-  toAppend.innerHTML = `
+  const taskElement = document.createElement('li');
+  taskElement.classList.add('task-card');
+  taskElement.innerHTML = `
         <div class="check-title">
             <img src="css/images/checkbox.svg" alt="" class="check-icon">
             <h4 class="task-title">${taskTitle}</h4>
         </div>
         <p class="task-description">${taskDescription}</p>
         <div class="task-options">
-            <img src="css/images/flag-orange.svg" alt="" class="priority-flag">
+            <img src="css/images/flag-orange.svg" alt="orange flag" class="priority-flag">
             <img src="css/images/edit.svg" alt="" class="task-option-btn task-edit">
             <img src="css/images/delete.svg" alt="" class="task-option-btn task-delete">
         </div>
     `;
 
-  document.querySelector('.tasks-section').appendChild(toAppend);
+  return taskElement;
 };
 
-const appendList = (list) => {
+const createListElement = (list) => {
   const listTitle = list.getTitle();
 
-  const toAppend = document.createElement('li');
-  toAppend.classList.add('list-item');
-  toAppend.innerText = `${listTitle}`;
+  const listElement = document.createElement('li');
+  listElement.classList.add('list-item');
+  listElement.innerText = `${listTitle}`;
 
-  document.querySelector('.lists').appendChild(toAppend);
+  return listElement;
 };
 
 // UI functions
@@ -56,7 +56,9 @@ const closeListModal = () => {
 // eslint-disable-next-line no-unused-vars
 const eventListeners = (() => {
   // Open add-task modal
-  document.querySelector('.tasks-add-btn').addEventListener('click', openTaskModal);
+  document
+    .querySelector('.tasks-add-btn')
+    .addEventListener('click', openTaskModal);
 
   // Cancel add-task form
   document
@@ -81,10 +83,14 @@ const eventListeners = (() => {
   });
 
   // Open add-list modal
-  document.querySelector('.add-list__btn').addEventListener('click', openListModal);
+  document
+    .querySelector('.add-list__btn')
+    .addEventListener('click', openListModal);
 
   // Cancel add-list form
-  document.querySelector('#add-list__cancel').addEventListener('click', closeListModal);
+  document
+    .querySelector('#add-list__cancel')
+    .addEventListener('click', closeListModal);
 
   // Open my-list menu - mobile
   document.querySelector('.toggle-lists').addEventListener('click', () => {
@@ -96,4 +102,4 @@ const eventListeners = (() => {
   });
 })();
 
-export { appendTask, appendList };
+export { createTaskElement, createListElement };
