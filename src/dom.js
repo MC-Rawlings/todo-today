@@ -76,7 +76,6 @@ const eventListeners = (() => {
     );
     const defaultList = rootList.getList()[0];
     defaultList.addToList(newTask);
-    appendTask(newTask);
 
     form.reset();
     closeTaskModal();
