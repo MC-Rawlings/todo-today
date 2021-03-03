@@ -6,7 +6,7 @@ import rootList from './index';
 
 const createList = (title) => {
   const list = [];
-  let isActive = false;
+  let isActive = true;
 
   // Getters
   const getTitle = () => title;

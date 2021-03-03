@@ -1,9 +1,16 @@
 import rootList from './index';
+import createTask from './task';
 
 const taskSection = document.querySelector('.tasks-section');
 
-// Append to DOM
+// Helper functions
+const clearTaskSection = () => {
+  while (taskSection.firstChild) {
+    taskSection.removeChild(taskSection.firstChild);
+  }
+};
 
+// Append to DOM
 const createTaskElement = (task) => {
   const taskTitle = task.getTitle();
   const taskDescription = task.getDescription();
@@ -34,12 +41,6 @@ const createListElement = (list) => {
   listElement.innerText = `${listTitle}`;
 
   return listElement;
-};
-
-const clearTaskSection = () => {
-  while (taskSection.firstChild) {
-    taskSection.removeChild(taskSection.firstChild);
-  }
 };
 
 const render = () => {
@@ -73,22 +74,29 @@ const closeListModal = () => {
 // Calling all eventListeners
 // eslint-disable-next-line no-unused-vars
 const eventListeners = (() => {
+  const taskForm = document.querySelector('.add-task__form');
   // Open add-task modal
   document
     .querySelector('.tasks-add-btn')
     .addEventListener('click', openTaskModal);
 
   // Cancel add-task form
-  document
-    .querySelector('#add-task__cancel')
-    .addEventListener('click', closeTaskModal);
+  document.querySelector('#add-task__cancel').addEventListener('click', () => {
+    taskForm.reset();
+    closeTaskModal();
+  });
 
   // Confirm add-task form
   document.querySelector('#add-task__confirm').addEventListener('click', () => {
-    const form = document.querySelector('.add-task__form');
+    const taskTitle = taskForm.elements[0].value;
+    const taskDescription = taskForm.elements[1].value;
+    const newTask = createTask(taskTitle, taskDescription);
+    const list = rootList.getList()[0];
+    list.addToList(newTask);
 
-    form.reset();
+    taskForm.reset();
     closeTaskModal();
+    render();
   });
 
   // Open add-list modal
