@@ -1,4 +1,9 @@
+import rootList from './index';
+
+const taskSection = document.querySelector('.tasks-section');
+
 // Append to DOM
+
 const createTaskElement = (task) => {
   const taskTitle = task.getTitle();
   const taskDescription = task.getDescription();
@@ -29,6 +34,23 @@ const createListElement = (list) => {
   listElement.innerText = `${listTitle}`;
 
   return listElement;
+};
+
+const clearTaskSection = () => {
+  while (taskSection.firstChild) {
+    taskSection.removeChild(taskSection.firstChild);
+  }
+};
+
+const render = () => {
+  clearTaskSection();
+  // eslint-disable-next-line prefer-destructuring
+  const list = Array.from(rootList.getList()[0].getList());
+
+  list.forEach((task) => {
+    const taskElement = createTaskElement(task);
+    taskSection.appendChild(taskElement);
+  });
 };
 
 // UI functions
@@ -64,14 +86,6 @@ const eventListeners = (() => {
   // Confirm add-task form
   document.querySelector('#add-task__confirm').addEventListener('click', () => {
     const form = document.querySelector('.add-task__form');
-    // const newTask = createTask(
-    //   form.elements[0].value,
-    //   form.elements[1].value,
-    //   // eslint-disable-next-line comma-dangle
-    //   form.elements[2].id
-    // );
-    // const defaultList = rootList.getList()[0];
-    // defaultList.addToList(newTask);
 
     form.reset();
     closeTaskModal();
@@ -97,4 +111,4 @@ const eventListeners = (() => {
   });
 })();
 
-export { createTaskElement, createListElement };
+export { createTaskElement, createListElement, render };

@@ -1,5 +1,5 @@
 /* eslint-disable import/no-cycle */
-import {} from './dom';
+import { render } from './dom';
 import createList from './list';
 import createTask from './task';
 
@@ -12,3 +12,5 @@ defaultList.addToList(defaultTask);
 
 // eslint-disable-next-line import/prefer-default-export
 export default rootList;
+
+render();
