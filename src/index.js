@@ -8,7 +8,7 @@ const rootList = createList('Root');
 export default rootList;
 const defaultList = createList('Home');
 rootList.addToList(defaultList);
-const defaultTask = createTask('Example', 'Example of a to-do item', 'medium');
+const defaultTask = createTask('Example', 'Example of a to-do item', 'low');
 defaultList.addToList(defaultTask);
 
 render();
