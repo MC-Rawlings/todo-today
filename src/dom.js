@@ -14,6 +14,7 @@ const clearTaskSection = () => {
 const createTaskElement = (task) => {
   const taskTitle = task.getTitle();
   const taskDescription = task.getDescription();
+  const taskPriority = task.getPriority();
 
   const taskElement = document.createElement('li');
   taskElement.classList.add('task-card');
@@ -24,7 +25,7 @@ const createTaskElement = (task) => {
         </div>
         <p class="task-description">${taskDescription}</p>
         <div class="task-options">
-            <img src="css/images/flag-orange.svg" alt="orange flag" class="priority-flag">
+            <img src="css/images/flag-${taskPriority}.svg" alt="" class="priority-flag">
             <img src="css/images/edit.svg" alt="" class="task-option-btn task-edit">
             <img src="css/images/delete.svg" alt="" class="task-option-btn task-delete">
         </div>
@@ -90,7 +91,19 @@ const eventListeners = (() => {
   document.querySelector('#add-task__confirm').addEventListener('click', () => {
     const taskTitle = taskForm.elements[0].value;
     const taskDescription = taskForm.elements[1].value;
-    const newTask = createTask(taskTitle, taskDescription);
+
+    // get checked priority
+    let taskPriority;
+    const priorities = document.querySelectorAll('.priority-input');
+    if (priorities[0].checked === true) {
+      taskPriority = 'high';
+    } else if (priorities[2].checked === true) {
+      taskPriority = 'low';
+    } else {
+      taskPriority = 'medium';
+    }
+
+    const newTask = createTask(taskTitle, taskDescription, taskPriority);
     const list = rootList.getList()[0];
     list.addToList(newTask);
 
