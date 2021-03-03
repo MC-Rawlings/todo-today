@@ -1,7 +1,3 @@
-// eslint-disable-next-line import/no-cycle
-import rootList from './index';
-import createTask from './task';
-
 // Append to DOM
 const createTaskElement = (task) => {
   const taskTitle = task.getTitle();
@@ -68,14 +64,14 @@ const eventListeners = (() => {
   // Confirm add-task form
   document.querySelector('#add-task__confirm').addEventListener('click', () => {
     const form = document.querySelector('.add-task__form');
-    const newTask = createTask(
-      form.elements[0].value,
-      form.elements[1].value,
-      // eslint-disable-next-line comma-dangle
-      form.elements[2].id
-    );
-    const defaultList = rootList.getList()[0];
-    defaultList.addToList(newTask);
+    // const newTask = createTask(
+    //   form.elements[0].value,
+    //   form.elements[1].value,
+    //   // eslint-disable-next-line comma-dangle
+    //   form.elements[2].id
+    // );
+    // const defaultList = rootList.getList()[0];
+    // defaultList.addToList(newTask);
 
     form.reset();
     closeTaskModal();
