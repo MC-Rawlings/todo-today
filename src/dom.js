@@ -28,7 +28,7 @@ const createTaskElement = (task) => {
         <div class="task-options">
             <img src="css/images/flag-${taskPriority}.svg" alt="" class="priority-flag">
             <img src="css/images/edit.svg" alt="" class="task-option-btn task-edit">
-            <img src="css/images/delete.svg" alt="" class="task-option-btn task-delete" data-id="${taskTitle}">
+            <img src="css/images/delete.svg" alt="" class="task-option-btn task-delete">
         </div>
     `;
 
