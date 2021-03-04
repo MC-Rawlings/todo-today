@@ -6,19 +6,14 @@ import rootList from './index';
 
 const createList = (title) => {
   const list = [];
-  let isActive = true;
 
   // Getters
   const getTitle = () => title;
   const getList = () => list;
-  const getIsActive = () => isActive;
 
   // Setters
   // eslint-disable-next-line no-param-reassign
   const setTitle = (newTitle) => (title = newTitle);
-  const toggleIsActive = () => {
-    isActive === false ? (isActive = true) : (isActive = false);
-  };
 
   // Methods
   const addToList = (task) => list.push(task);
@@ -35,9 +30,7 @@ const createList = (title) => {
   return {
     getTitle,
     getList,
-    getIsActive,
     setTitle,
-    toggleIsActive,
     addToList,
     removeTask,
   };
