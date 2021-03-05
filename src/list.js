@@ -1,10 +1,3 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-return-assign */
-// import { createTask } from './task';
-// eslint-disable-next-line import/no-cycle
-import { render } from './dom';
-import rootList from './index';
-
 const createList = (title) => {
   let list = [];
 
@@ -14,6 +7,7 @@ const createList = (title) => {
 
   // Setters
   // eslint-disable-next-line no-param-reassign
+  // eslint-disable-next-line no-return-assign
   const setTitle = (newTitle) => (title = newTitle);
 
   // Methods
@@ -21,8 +15,6 @@ const createList = (title) => {
 
   const removeTask = (taskTitle) => {
     list = list.filter((task) => task.getTitle() !== taskTitle);
-
-    render();
   };
 
   return {

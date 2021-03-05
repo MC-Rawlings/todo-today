@@ -1,38 +1,98 @@
 // eslint-disable-next-line import/no-cycle
-import rootList from './index';
+import rootList, { defaultList } from './index';
 import createTask from './task';
 
 const taskSection = document.querySelector('.tasks-section');
 
-// Helper functions
+// helper functions
 const clearTaskSection = () => {
   while (taskSection.firstChild) {
     taskSection.removeChild(taskSection.firstChild);
   }
 };
 
-// Append to DOM
-const createTaskElement = (task) => {
-  const taskTitle = task.getTitle();
-  const taskDescription = task.getDescription();
-  const taskPriority = task.getPriority();
+// append to DOM
+const createTaskElement = (task, index) => {
+  const title = task.getTitle();
+  const description = task.getDescription();
+  const priority = task.getPriority();
 
+  // main task element
   const taskElement = document.createElement('li');
   taskElement.classList.add('task-card');
-  taskElement.innerHTML = `
-        <div class="check-title">
-            <img src="css/images/checkbox.svg" alt="" class="check-icon">
-            <h4 class="task-title">${taskTitle}</h4>
-        </div>
-        <p class="task-description">${taskDescription}</p>
-        <div class="task-options">
-            <img src="assets/images/flag-${taskPriority}.svg" alt="" class="priority-flag">
-            <img src="assets/images/edit.svg" alt="" class="task-option-btn task-edit">
-            <img src="assets/images/delete.svg" alt="" class="task-option-btn task-delete">
-        </div>
-    `;
+
+  // title container
+  const titleDiv = document.createElement('div');
+  titleDiv.classList.add('check-title');
+
+  const checkboxImage = document.createElement('img');
+  checkboxImage.classList.add('check-icon');
+  checkboxImage.src = 'assets/images/checkbox.svg';
+  checkboxImage.alt = 'complete-task checkbox';
+
+  const taskTitle = document.createElement('h4');
+  taskTitle.classList.add('task-title');
+  taskTitle.textContent = `${title}`;
+
+  titleDiv.appendChild(checkboxImage);
+  titleDiv.appendChild(taskTitle);
+
+  const descriptionPara = document.createElement('p');
+  descriptionPara.classList.add('task-description');
+  descriptionPara.textContent = description;
+
+  // options container
+  const taskOptions = document.createElement('div');
+  taskOptions.classList.add('task-options');
+
+  const prioritySetting = document.createElement('img');
+  prioritySetting.classList.add('priority-flag');
+  prioritySetting.src = `assets/images/flag-${priority}.svg`;
+  prioritySetting.alt = 'priority selection button';
+
+  const editBtn = document.createElement('img');
+  editBtn.classList.add('task-option-btn');
+  editBtn.classList.add('task-edit');
+  editBtn.src = 'assets/images/edit.svg';
+  editBtn.alt = 'edit-task button';
+
+  const deleteButton = document.createElement('btn');
+  deleteButton.addEventListener('click', () => {
+    // eslint-disable-next-line no-use-before-define
+    handleRemoveTask(index);
+  });
+
+  const deleteImage = document.createElement('img');
+  deleteImage.src = 'assets/images/delete.svg';
+  deleteImage.alt = 'Delete task';
+
+  deleteButton.appendChild(deleteImage);
+  taskOptions.appendChild(prioritySetting);
+  taskOptions.appendChild(editBtn);
+  taskOptions.appendChild(deleteButton);
+
+  taskElement.appendChild(titleDiv);
+  taskElement.appendChild(descriptionPara);
+  taskElement.appendChild(taskOptions);
 
   return taskElement;
+};
+
+const render = () => {
+  clearTaskSection();
+  // eslint-disable-next-line prefer-destructuring
+  const list = Array.from(rootList.getList()[0].getList());
+
+  list.forEach((task, index) => {
+    const taskElement = createTaskElement(task, index);
+    taskSection.appendChild(taskElement);
+  });
+};
+
+const handleRemoveTask = (index) => {
+  console.log('Deleting task', index);
+  defaultList.removeTask(index);
+  render();
 };
 
 const createListElement = (list) => {
@@ -43,17 +103,6 @@ const createListElement = (list) => {
   listElement.innerText = `${listTitle}`;
 
   return listElement;
-};
-
-const render = () => {
-  clearTaskSection();
-  // eslint-disable-next-line prefer-destructuring
-  const list = Array.from(rootList.getList()[0].getList());
-
-  list.forEach((task) => {
-    const taskElement = createTaskElement(task);
-    taskSection.appendChild(taskElement);
-  });
 };
 
 // UI functions
