@@ -90,7 +90,7 @@ const render = () => {
 };
 
 const handleRemoveTask = (index) => {
-  console.log('Deleting task', index);
+  console.log('click working', index);
   defaultList.removeTask(index);
   render();
 };

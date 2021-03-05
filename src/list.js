@@ -13,8 +13,8 @@ const createList = (title) => {
   // Methods
   const addToList = (task) => list.push(task);
 
-  const removeTask = (taskTitle) => {
-    list = list.filter((task) => task.getTitle() !== taskTitle);
+  const removeTask = (index) => {
+    list.splice(index, 1);
   };
 
   return {
