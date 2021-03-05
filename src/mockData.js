@@ -8,11 +8,11 @@ export const mockTasks = [
   {
     title: 'Example 1',
     description: 'Example of a to-do item 1',
-    priority: 'low',
+    priority: 'medium',
   },
   {
     title: 'Example 2',
     description: 'Example of a to-do item 2',
-    priority: 'low',
+    priority: 'high',
   },
 ];

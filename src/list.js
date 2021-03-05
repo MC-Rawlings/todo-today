@@ -1,5 +1,5 @@
 const createList = (title) => {
-  let list = [];
+  const list = [];
 
   // Getters
   const getTitle = () => title;

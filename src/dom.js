@@ -55,6 +55,9 @@ const createTaskElement = (task, index) => {
   editBtn.classList.add('task-edit');
   editBtn.src = 'assets/images/edit.svg';
   editBtn.alt = 'edit-task button';
+  editBtn.addEventListener('click', () => {
+    handleEditTask(index);
+  })
 
   const deleteButton = document.createElement('btn');
   deleteButton.addEventListener('click', () => {
@@ -92,6 +95,10 @@ const render = () => {
 const handleRemoveTask = (index) => {
   console.log('click working', index);
   defaultList.removeTask(index);
+  render();
+};
+
+const handleEditTask = (index) => {
   render();
 };
 
