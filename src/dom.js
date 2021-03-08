@@ -24,6 +24,9 @@ const createTaskElement = (task, index) => {
   // title container
   const titleDiv = document.createElement('div');
   titleDiv.classList.add('check-title');
+  titleDiv.addEventListener('click', () => {
+    handleToggleChecked(index);
+  });
 
   const checkboxImage = document.createElement('img');
   checkboxImage.classList.add('check-icon');
@@ -34,9 +37,6 @@ const createTaskElement = (task, index) => {
     taskElement.classList.add('checked');
   }
   checkboxImage.alt = 'complete-task checkbox';
-  checkboxImage.addEventListener('click', () => {
-    handleToggleChecked(index);
-  });
 
   const taskTitle = document.createElement('h4');
   taskTitle.classList.add('task-title');
