@@ -33,8 +33,10 @@ const createTaskElement = (task, index) => {
     checkboxImage.src = 'assets/images/checked.svg';
     taskElement.classList.add('checked');
   }
-
   checkboxImage.alt = 'complete-task checkbox';
+  checkboxImage.addEventListener('click', () => {
+    handleToggleChecked(index);
+  });
 
   const taskTitle = document.createElement('h4');
   taskTitle.classList.add('task-title');
@@ -99,8 +101,12 @@ const render = () => {
 };
 
 const handleRemoveTask = (index) => {
-  console.log('click working', index);
   defaultList.removeTask(index);
+  render();
+};
+
+const handleToggleChecked = (index) => {
+  defaultList.getList()[index].toggleCheck();
   render();
 };
 

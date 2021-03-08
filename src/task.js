@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-return-assign */
 const createTask = (title, description, priority) => {
-  let isChecked = true;
+  let isChecked = false;
 
   // Getters
   const getTitle = () => title;
@@ -20,7 +20,11 @@ const createTask = (title, description, priority) => {
 
   const toggleCheck = () => {
     // eslint-disable-next-line no-unused-expressions
-    isChecked === false ? (isChecked = true) : (isChecked = false);
+    if (isChecked === false) {
+      isChecked = true;
+    } else {
+      isChecked = false;
+    }
   };
 
   return {
