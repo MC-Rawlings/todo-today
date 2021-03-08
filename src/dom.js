@@ -27,7 +27,13 @@ const createTaskElement = (task, index) => {
 
   const checkboxImage = document.createElement('img');
   checkboxImage.classList.add('check-icon');
-  checkboxImage.src = 'assets/images/checkbox.svg';
+  if (task.getIsChecked() === false) {
+    checkboxImage.src = 'assets/images/checkbox.svg';
+  } else {
+    checkboxImage.src = 'assets/images/checked.svg';
+    taskElement.classList.add('checked');
+  }
+
   checkboxImage.alt = 'complete-task checkbox';
 
   const taskTitle = document.createElement('h4');
@@ -57,7 +63,7 @@ const createTaskElement = (task, index) => {
   editBtn.alt = 'edit-task button';
   editBtn.addEventListener('click', () => {
     handleEditTask(index);
-  })
+  });
 
   const deleteButton = document.createElement('btn');
   deleteButton.addEventListener('click', () => {
@@ -95,10 +101,6 @@ const render = () => {
 const handleRemoveTask = (index) => {
   console.log('click working', index);
   defaultList.removeTask(index);
-  render();
-};
-
-const handleEditTask = (index) => {
   render();
 };
 
