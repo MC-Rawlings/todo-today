@@ -110,6 +110,18 @@ const handleToggleChecked = (index) => {
   render();
 };
 
+const handleEditTask = (index) => {
+  const taskForm = document.querySelector('.add-task__form');
+  const title = defaultList.getList()[index].getTitle();
+  const description = defaultList.getList()[index].getDescription();
+  const priority = defaultList.getList()[index].getPriority();
+
+  taskForm.elements[0].value = title;
+  taskForm.elements[1].value = description;
+  document.getElementById(`${priority}`).checked = true;
+  openTaskModal();
+};
+
 const createListElement = (list) => {
   const listTitle = list.getTitle();
 
@@ -158,20 +170,14 @@ const eventListeners = (() => {
     const taskDescription = taskForm.elements[1].value;
 
     // get checked priority
-    let taskPriority;
-    const priorities = document.querySelectorAll('.priority-input');
-    if (priorities[0].checked === true) {
-      taskPriority = 'high';
-    } else if (priorities[2].checked === true) {
-      taskPriority = 'low';
-    } else {
-      taskPriority = 'medium';
-    }
+    const taskPriority = getPriority();
 
+    // create task and add to list
     const newTask = createTask(taskTitle, taskDescription, taskPriority);
     const list = rootList.getList()[0];
     list.addToList(newTask);
 
+    // reset form and render
     taskForm.reset();
     closeTaskModal();
     render();
@@ -196,5 +202,16 @@ const eventListeners = (() => {
       : (lists.style.display = 'none');
   });
 })();
+
+const getPriority = () => {
+  const priorities = document.querySelectorAll('.priority-input');
+  if (priorities[0].checked === true) {
+    return 'high';
+  }
+  if (priorities[2].checked === true) {
+    return 'low';
+  }
+  return 'medium';
+};
 
 export { createTaskElement, createListElement, render };

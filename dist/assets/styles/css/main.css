@@ -210,6 +210,10 @@ body {
   margin: 0 0.5rem;
 }
 
+.task-options .priority-flag {
+  cursor: default;
+}
+
 .task-option-btn {
   width: 1.5rem;
 }
