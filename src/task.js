@@ -10,10 +10,7 @@ const createTask = (title, description, priority) => {
   const getIsChecked = () => isChecked;
 
   // Setters
-  const setTitle = (newTitle) => {
-    const tempTitle = newTitle;
-    return tempTitle;
-  };
+  const setTitle = (newTitle) => (title = newTitle);
 
   const setDescription = (newDescription) => (description = newDescription);
   const setPriority = (newPriority) => (priority = newPriority);

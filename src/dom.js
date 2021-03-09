@@ -120,6 +120,16 @@ const handleEditTask = (index) => {
   editTaskForm.elements[1].value = description;
   document.getElementById(`${priority}`).checked = true;
   openEditModal();
+
+  document
+    .getElementById('edit-task__confirm')
+    .addEventListener('click', () => {
+      defaultList.getList()[index].setTitle(editTaskForm.elements[0].value);
+      defaultList.getList()[index].setDescription(editTaskForm.elements[1].value);
+      render();
+      editTaskForm.reset();
+      closeEditModal();
+    });
 };
 
 const createListElement = (list) => {
