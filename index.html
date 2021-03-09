@@ -58,6 +58,38 @@
         </div>
     </div>
 
+    <!-- Edit task modal -->
+    <div class="modal-bg__task-edit">
+        <div class="add-task__modal">
+            <form action="" class="add-task__form">
+                <label for="task-title">TITLE:</label>
+                <input type="text" id="task-title">
+                <label for="description">DESCRIPTION:</label>
+                <textarea type="text" id="description" rows="4"></textarea>
+
+                <h5 class="priority-heading">PRIORITY:</h5>
+                <div class="priority-section">
+
+                    <input type="radio" name="priority" id="high" class="priority-input">
+                    <label for="high"><img src="assets/images/flag-high.svg" alt="red flag"
+                            class="priority-radio-btns"></label>
+
+                    <input type="radio" name="priority" id="medium" class="priority-input" checked>
+                    <label for="medium"><img src="assets/images/flag-medium.svg" alt="orange flag"
+                            class="priority-radio-btns"></label>
+
+                    <input type="radio" name="priority" id="low" class="priority-input">
+                    <label for="low"><img src="assets/images/flag-low.svg" alt="green flag"
+                            class="priority-radio-btns"></label>
+                </div>
+            </form>
+            <div class="add-task__btns">
+                <div id="edit-task__confirm" class="bs-btn">CONFIRM</div>
+                <div id="edit-task__cancel" class="bs-btn">CANCEL</div>
+            </div>
+        </div>
+    </div>
+
     <header class="header-main">
         <h1 class="logo">
             <img src="assets/images/logo.svg" alt="">
