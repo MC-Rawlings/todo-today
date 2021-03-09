@@ -111,13 +111,13 @@ const handleToggleChecked = (index) => {
 };
 
 const handleEditTask = (index) => {
-  const taskForm = document.querySelector('.add-task__form');
+  const editTaskForm = document.querySelector('.edit-task__form');
   const title = defaultList.getList()[index].getTitle();
   const description = defaultList.getList()[index].getDescription();
   const priority = defaultList.getList()[index].getPriority();
 
-  taskForm.elements[0].value = title;
-  taskForm.elements[1].value = description;
+  editTaskForm.elements[0].value = title;
+  editTaskForm.elements[1].value = description;
   document.getElementById(`${priority}`).checked = true;
   openEditModal();
 };
