@@ -296,7 +296,8 @@ body {
 #add-task__cancel,
 #add-list__confirm,
 #add-list__cancel,
-#edit-task__confirm {
+#edit-task__confirm,
+#edit-task__cancel {
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -319,13 +320,13 @@ body {
   background: var(--clr-primary);
 }
 
-#add-task__cancel, #add-list__cancel {
+#add-task__cancel, #add-list__cancel, #edit-task__cancel {
   border: 1px solid rgb(170, 170, 170);
   color: rgb(170, 170, 170);
   transition: 200ms;
 }
 
-#add-task__cancel:hover, #add-list__cancel:hover {
+#add-task__cancel:hover, #add-list__cancel:hover, #edit-task__cancel:hover {
   color: rgb(126, 126, 126);
 }
 
@@ -334,7 +335,7 @@ body {
   width: 5em;
 }
 
-.add-task__form, .add-list__form {
+.add-task__form, .add-list__form, .edit-task__form {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -352,7 +353,7 @@ body {
   margin-bottom: -2.5rem;
 }
 
-.add-task__form label {
+.add-task__form label, .edit-task__form label {
   margin-top: 1.5rem;
 }
 
