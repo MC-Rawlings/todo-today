@@ -119,7 +119,7 @@ const handleEditTask = (index) => {
   taskForm.elements[0].value = title;
   taskForm.elements[1].value = description;
   document.getElementById(`${priority}`).checked = true;
-  openTaskModal();
+  openEditModal();
 };
 
 const createListElement = (list) => {
@@ -133,6 +133,14 @@ const createListElement = (list) => {
 };
 
 // UI functions
+const openEditModal = () => {
+  document.querySelector('.modal-bg__task-edit').style.display = 'flex';
+};
+
+const closeEditModal = () => {
+  document.querySelector('.modal-bg__task-edit').style.display = 'none';
+};
+
 const openTaskModal = () => {
   document.querySelector('.modal-bg__task').style.display = 'flex';
 };
@@ -200,6 +208,10 @@ const eventListeners = (() => {
     lists.style.display === 'none'
       ? (lists.style.display = 'flex')
       : (lists.style.display = 'none');
+  });
+
+  document.querySelector('#edit-task__cancel').addEventListener('click', () => {
+    closeEditModal();
   });
 })();
 
