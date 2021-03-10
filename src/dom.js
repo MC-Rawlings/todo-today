@@ -125,10 +125,14 @@ const handleEditTask = (index) => {
     .getElementById('edit-task__confirm')
     .addEventListener('click', () => {
       defaultList.getList()[index].setTitle(editTaskForm.elements[0].value);
-      defaultList.getList()[index].setDescription(editTaskForm.elements[1].value);
-      render();
+      console.log(editTaskForm.elements[0].value);
+      defaultList
+        .getList()
+        [index].setDescription(editTaskForm.elements[1].value);
+        console.log(editTaskForm.elements[1].value);
       editTaskForm.reset();
       closeEditModal();
+      render();
     });
 };
 
