@@ -116,11 +116,13 @@ const handleEditTask = (index) => {
   const description = defaultList.getList()[index].getDescription();
   const priority = defaultList.getList()[index].getPriority();
 
+  // open form with relative task info
   editTaskForm.elements[0].value = title;
   editTaskForm.elements[1].value = description;
   document.getElementById(`${priority}`).checked = true;
   openEditModal();
 
+  // replace task with new info and render
   document
     .getElementById('edit-task__confirm')
     .addEventListener('click', () => {
@@ -129,7 +131,7 @@ const handleEditTask = (index) => {
       defaultList
         .getList()
         [index].setDescription(editTaskForm.elements[1].value);
-        console.log(editTaskForm.elements[1].value);
+      console.log(editTaskForm.elements[1].value);
       editTaskForm.reset();
       closeEditModal();
       render();
