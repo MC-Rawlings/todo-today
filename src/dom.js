@@ -112,14 +112,14 @@ const handleToggleChecked = (index) => {
 
 const handleEditTask = (index) => {
   const editTaskForm = document.querySelector('.edit-task__form');
-  const title = defaultList.getList()[index].getTitle();
-  const description = defaultList.getList()[index].getDescription();
-  const priority = defaultList.getList()[index].getPriority();
+  let title = defaultList.getList()[index].getTitle();
+  let description = defaultList.getList()[index].getDescription();
+  let priority = defaultList.getList()[index].getPriority();
 
   // open form with relative task info
   editTaskForm.elements[0].value = title;
   editTaskForm.elements[1].value = description;
-  document.getElementById(`${priority}`).checked = true;
+  document.getElementById(`edit-${priority}`).checked = true;
   openEditModal();
 
   // replace task with new info and render
@@ -127,14 +127,12 @@ const handleEditTask = (index) => {
     .getElementById('edit-task__confirm')
     .addEventListener('click', () => {
       defaultList.getList()[index].setTitle(editTaskForm.elements[0].value);
-      console.log(editTaskForm.elements[0].value);
       defaultList
         .getList()
         [index].setDescription(editTaskForm.elements[1].value);
-      console.log(editTaskForm.elements[1].value);
-      editTaskForm.reset();
-      closeEditModal();
+      defaultList.getList()[index].setPriority(getPriorityEdit());
       render();
+      closeEditModal();
     });
 };
 
@@ -233,6 +231,17 @@ const eventListeners = (() => {
 
 const getPriority = () => {
   const priorities = document.querySelectorAll('.priority-input');
+  if (priorities[0].checked === true) {
+    return 'high';
+  }
+  if (priorities[2].checked === true) {
+    return 'low';
+  }
+  return 'medium';
+};
+
+const getPriorityEdit = () => {
+  const priorities = document.querySelectorAll('.priority-input-edit');
   if (priorities[0].checked === true) {
     return 'high';
   }
