@@ -112,9 +112,9 @@ const handleToggleChecked = (index) => {
 
 const handleEditTask = (index) => {
   const editTaskForm = document.querySelector('.edit-task__form');
-  let title = defaultList.getList()[index].getTitle();
-  let description = defaultList.getList()[index].getDescription();
-  let priority = defaultList.getList()[index].getPriority();
+  const title = defaultList.getList()[index].getTitle();
+  const description = defaultList.getList()[index].getDescription();
+  const priority = defaultList.getList()[index].getPriority();
 
   // open form with relative task info
   editTaskForm.elements[0].value = title;
@@ -123,17 +123,21 @@ const handleEditTask = (index) => {
   openEditModal();
 
   // replace task with new info and render
-  document
-    .getElementById('edit-task__confirm')
-    .addEventListener('click', () => {
+  document.getElementById('edit-task__confirm').addEventListener(
+    'click',
+    () => {
+      console.log(editTaskForm.elements[0].value);
       defaultList.getList()[index].setTitle(editTaskForm.elements[0].value);
       defaultList
         .getList()
         [index].setDescription(editTaskForm.elements[1].value);
+      console.log(editTaskForm.elements[1].value);
       defaultList.getList()[index].setPriority(getPriorityEdit());
       render();
       closeEditModal();
-    });
+    },
+    { once: true }
+  );
 };
 
 const createListElement = (list) => {
