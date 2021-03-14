@@ -184,6 +184,15 @@ const handleRenderList = (list) => {
   render(list);
 };
 
+const handleRemoveList = () => {
+  const itemToRemove = rootList
+    .getList()
+    .filter((list) => list.getTitle() === document.querySelector('.tasks-section__title').textContent);
+  rootList.removeTask(itemToRemove);
+  renderLists();
+  render();
+};
+
 // UI functions
 const openEditModal = () => {
   document.querySelector('.modal-bg__task-edit').style.display = 'flex';
@@ -258,6 +267,11 @@ const eventListeners = (() => {
   document
     .querySelector('#add-list__cancel')
     .addEventListener('click', closeListModal);
+
+  // Remove list
+  document
+    .querySelector('.delete-list_title')
+    .addEventListener('click', handleRemoveList);
 
   // Open my-list menu - mobile
   document.querySelector('.toggle-lists').addEventListener('click', () => {
