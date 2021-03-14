@@ -101,6 +101,9 @@ const createListElement = (list, index) => {
   const listItem = document.createElement('li');
   listItem.classList.add('list-item');
   listItem.textContent = `${title}`;
+  listItem.addEventListener('click', () => {
+    handleRenderList(list);
+  });
 
   return listItem;
 };
@@ -122,12 +125,12 @@ const renderLists = () => {
   listSection.appendChild(addListBtn);
 };
 
-const render = () => {
+const render = (list = rootList.getList()[0]) => {
   clearTaskSection();
   // eslint-disable-next-line prefer-destructuring
-  const list = Array.from(rootList.getList()[0].getList());
+  const listArr = Array.from(list.getList());
 
-  list.forEach((task, index) => {
+  listArr.forEach((task, index) => {
     const taskElement = createTaskElement(task, index);
     taskSection.appendChild(taskElement);
   });
@@ -171,6 +174,11 @@ const handleEditTask = (index) => {
     },
     { once: true }
   );
+};
+
+const handleRenderList = (list) => {
+  document.querySelector('.tasks-section__title').textContent = `${list.getTitle()}`;
+  render(list);
 };
 
 // UI functions
