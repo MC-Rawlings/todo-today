@@ -360,7 +360,7 @@ body {
 #task-title,
 #edit-task-title,
 #list-title,
-#edit-description,
+#edit-description,\
 #description {
   margin: 0.5em 0;
   height: 2rem;
