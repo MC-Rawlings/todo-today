@@ -136,7 +136,7 @@ const handleEditTask = (index) => {
       render();
       closeEditModal();
     },
-    { once: true }
+    { once: true },
   );
 };
 
