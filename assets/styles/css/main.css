@@ -157,6 +157,7 @@ body {
 .tasks-section__title {
   font-size: 2rem;
   font-weight: bold;
+  min-width: 4.5em;
   color: var(--clr-primary);
 }
 
