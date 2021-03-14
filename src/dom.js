@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/no-cycle
 import rootList, { defaultList } from './index';
 import createTask from './task';
+import createList from './list';
 
 const taskSection = document.querySelector('.tasks-section');
 const listSection = document.querySelector('.lists');
@@ -177,7 +178,9 @@ const handleEditTask = (index) => {
 };
 
 const handleRenderList = (list) => {
-  document.querySelector('.tasks-section__title').textContent = `${list.getTitle()}`;
+  document.querySelector(
+    '.tasks-section__title'
+  ).textContent = `${list.getTitle()}`;
   render(list);
 };
 
@@ -238,6 +241,17 @@ const eventListeners = (() => {
     taskForm.reset();
     closeTaskModal();
     render();
+  });
+
+  // Confirm add-list form
+  document.querySelector('#add-list__confirm').addEventListener('click', () => {
+    const listForm = document.querySelector('.add-list__form');
+    const newList = createList(listForm.elements[0].value);
+
+    rootList.addToList(newList);
+    listForm.reset();
+    closeListModal();
+    renderLists();
   });
 
   // Cancel add-list form
