@@ -3,11 +3,18 @@ import rootList, { defaultList } from './index';
 import createTask from './task';
 
 const taskSection = document.querySelector('.tasks-section');
+const listSection = document.querySelector('.lists');
 
 // helper functions
 const clearTaskSection = () => {
   while (taskSection.firstChild) {
     taskSection.removeChild(taskSection.firstChild);
+  }
+};
+
+const clearListSection = () => {
+  while (listSection.firstChild) {
+    listSection.removeChild(listSection.firstChild);
   }
 };
 
@@ -89,6 +96,32 @@ const createTaskElement = (task, index) => {
   return taskElement;
 };
 
+const createListElement = (list, index) => {
+  const title = list.getTitle();
+  const listItem = document.createElement('li');
+  listItem.classList.add('list-item');
+  listItem.textContent = `${title}`;
+
+  return listItem;
+};
+
+const renderLists = () => {
+  clearListSection();
+  const rootListArr = Array.from(rootList.getList());
+
+  rootListArr.forEach((list, index) => {
+    const listElement = createListElement(list, index);
+    listSection.appendChild(listElement);
+  });
+
+  const addListBtn = document.createElement('div');
+  addListBtn.classList.add('add-list__btn');
+  addListBtn.textContent = 'ADD LIST';
+  addListBtn.addEventListener('click', openListModal);
+
+  listSection.appendChild(addListBtn);
+};
+
 const render = () => {
   clearTaskSection();
   // eslint-disable-next-line prefer-destructuring
@@ -136,18 +169,8 @@ const handleEditTask = (index) => {
       render();
       closeEditModal();
     },
-    { once: true },
+    { once: true }
   );
-};
-
-const createListElement = (list) => {
-  const listTitle = list.getTitle();
-
-  const listElement = document.createElement('li');
-  listElement.classList.add('list-item');
-  listElement.innerText = `${listTitle}`;
-
-  return listElement;
 };
 
 // UI functions
@@ -209,11 +232,6 @@ const eventListeners = (() => {
     render();
   });
 
-  // Open add-list modal
-  document
-    .querySelector('.add-list__btn')
-    .addEventListener('click', openListModal);
-
   // Cancel add-list form
   document
     .querySelector('#add-list__cancel')
@@ -255,4 +273,4 @@ const getPriorityEdit = () => {
   return 'medium';
 };
 
-export { createTaskElement, createListElement, render };
+export { createTaskElement, createListElement, render, renderLists };
