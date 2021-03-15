@@ -194,6 +194,28 @@ const handleRemoveList = () => {
   render();
 };
 
+const handleEditTitle = () => {
+  document.querySelector(
+    '.add-list__form-edit'
+  ).elements[0].value = rootList.getList()[getListIndex()].getTitle();
+  openListModalEdit();
+
+  // Replace with new info and render
+  document.getElementById('edit-list__confirm').addEventListener(
+    'click',
+    () => {
+      const list = rootList.getList()[getListIndex()];
+      list.setTitle(
+        document.querySelector('.add-list__form-edit').elements[0].value
+      );
+      renderLists();
+      render(list);
+      closeListModalEdit();
+    },
+    { once: true }
+  );
+};
+
 // UI functions
 const openEditModal = () => {
   document.querySelector('.modal-bg__task-edit').style.display = 'flex';
@@ -217,6 +239,14 @@ const openListModal = () => {
 
 const closeListModal = () => {
   document.querySelector('.modal-bg__list').style.display = 'none';
+};
+
+const openListModalEdit = () => {
+  document.querySelector('.modal-bg__list-edit').style.display = 'flex';
+};
+
+const closeListModalEdit = () => {
+  document.querySelector('.modal-bg__list-edit').style.display = 'none';
 };
 
 // Calling all eventListeners
@@ -274,6 +304,16 @@ const eventListeners = (() => {
   document
     .querySelector('.delete-list_title')
     .addEventListener('click', handleRemoveList);
+
+  // Edit list title
+  document
+    .querySelector('.edit-list__title')
+    .addEventListener('click', handleEditTitle);
+
+  // Cancel list edit
+  document
+    .querySelector('#edit-list__cancel')
+    .addEventListener('click', closeListModalEdit);
 
   // Open my-list menu - mobile
   document.querySelector('.toggle-lists').addEventListener('click', () => {
