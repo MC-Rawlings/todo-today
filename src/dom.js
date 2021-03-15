@@ -152,10 +152,11 @@ const handleToggleChecked = (index) => {
 };
 
 const handleEditTask = (index) => {
+  const list = rootList.getList()[getListIndex()];
   const editTaskForm = document.querySelector('.edit-task__form');
-  const title = defaultList.getList()[index].getTitle();
-  const description = defaultList.getList()[index].getDescription();
-  const priority = defaultList.getList()[index].getPriority();
+  const title = list.getList()[index].getTitle();
+  const description = list.getList()[index].getDescription();
+  const priority = list.getList()[index].getPriority();
 
   // open form with relative task info
   editTaskForm.elements[0].value = title;
@@ -168,13 +169,11 @@ const handleEditTask = (index) => {
     'click',
     () => {
       console.log(editTaskForm.elements[0].value);
-      defaultList.getList()[index].setTitle(editTaskForm.elements[0].value);
-      defaultList
-        .getList()
-        [index].setDescription(editTaskForm.elements[1].value);
+      list.getList()[index].setTitle(editTaskForm.elements[0].value);
+      list.getList()[index].setDescription(editTaskForm.elements[1].value);
       console.log(editTaskForm.elements[1].value);
-      defaultList.getList()[index].setPriority(getPriorityEdit());
-      render(defaultList);
+      list.getList()[index].setPriority(getPriorityEdit());
+      render(list);
       closeEditModal();
     },
     { once: true }
@@ -243,7 +242,6 @@ const eventListeners = (() => {
 
   // Confirm add-task form
   document.querySelector('#add-task__confirm').addEventListener('click', () => {
-    const listTitle = document.querySelector('.tasks-section__title');
     const taskTitle = taskForm.elements[0].value;
     const taskDescription = taskForm.elements[1].value;
 
@@ -320,11 +318,14 @@ const getPriorityEdit = () => {
 };
 
 const getListIndex = () => {
-  const sectionTitle = document.querySelector('.tasks-section__title')
-    .textContent;
   const activeListIndex = rootList
     .getList()
-    .findIndex((list) => list.getTitle() === sectionTitle);
+    .findIndex(
+      (list) =>
+        list.getTitle() ===
+        document.querySelector('.tasks-section__title').textContent
+    );
+  console.log(activeListIndex);
 
   return activeListIndex;
 };
