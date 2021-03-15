@@ -325,7 +325,9 @@ body {
 #add-list__confirm,
 #add-list__cancel,
 #edit-task__confirm,
-#edit-task__cancel {
+#edit-task__cancel,
+#edit-list__confirm,
+#edit-list__cancel {
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -373,6 +375,7 @@ body {
 
 .add-task__form,
 .add-list__form,
+.add-list__form-edit,
 .edit-task__form {
   display: flex;
   flex-direction: column;
@@ -399,6 +402,7 @@ body {
 #task-title,
 #edit-task-title,
 #list-title,
+#list-title-edit,
 #edit-description,
 #description {
   margin: 0.5em 0;
