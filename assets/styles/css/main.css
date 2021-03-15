@@ -276,7 +276,8 @@ body {
 
 .modal-bg__task,
 .modal-bg__list,
-.modal-bg__task-edit {
+.modal-bg__task-edit,
+.modal-bg__list-edit {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
