@@ -147,8 +147,9 @@ const handleRemoveTask = (index) => {
 };
 
 const handleToggleChecked = (index) => {
-  defaultList.getList()[index].toggleCheck();
-  render();
+  const list = rootList.getList()[getListIndex()];
+  list.getList()[index].toggleCheck();
+  render(list);
 };
 
 const handleEditTask = (index) => {
@@ -188,14 +189,7 @@ const handleRenderList = (list) => {
 };
 
 const handleRemoveList = () => {
-  const itemToRemove = rootList
-    .getList()
-    .reduce(
-      (list) =>
-        list.getTitle() !==
-        document.querySelector('.tasks-section__title').textContent
-    );
-  rootList.removeTask(itemToRemove);
+  rootList.removeTask(getListIndex());
   renderLists();
   render();
 };
