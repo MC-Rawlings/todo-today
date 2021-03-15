@@ -135,6 +135,10 @@ const render = (list = rootList.getList()[0]) => {
     const taskElement = createTaskElement(task, index);
     taskSection.appendChild(taskElement);
   });
+
+  document.querySelector(
+    '.tasks-section__title'
+  ).textContent = `${list.getTitle()}`;
 };
 
 const handleRemoveTask = (index) => {
@@ -170,7 +174,7 @@ const handleEditTask = (index) => {
         [index].setDescription(editTaskForm.elements[1].value);
       console.log(editTaskForm.elements[1].value);
       defaultList.getList()[index].setPriority(getPriorityEdit());
-      render();
+      render(defaultList);
       closeEditModal();
     },
     { once: true }
@@ -187,7 +191,11 @@ const handleRenderList = (list) => {
 const handleRemoveList = () => {
   const itemToRemove = rootList
     .getList()
-    .filter((list) => list.getTitle() === document.querySelector('.tasks-section__title').textContent);
+    .reduce(
+      (list) =>
+        list.getTitle() !==
+        document.querySelector('.tasks-section__title').textContent
+    );
   rootList.removeTask(itemToRemove);
   renderLists();
   render();
@@ -235,6 +243,7 @@ const eventListeners = (() => {
 
   // Confirm add-task form
   document.querySelector('#add-task__confirm').addEventListener('click', () => {
+    const listTitle = document.querySelector('.tasks-section__title');
     const taskTitle = taskForm.elements[0].value;
     const taskDescription = taskForm.elements[1].value;
 
@@ -243,13 +252,14 @@ const eventListeners = (() => {
 
     // create task and add to list
     const newTask = createTask(taskTitle, taskDescription, taskPriority);
-    const list = rootList.getList()[0];
+    const list = rootList.getList()[getListIndex()];
+
     list.addToList(newTask);
 
     // reset form and render
     taskForm.reset();
     closeTaskModal();
-    render();
+    render(list);
   });
 
   // Confirm add-list form
@@ -307,6 +317,16 @@ const getPriorityEdit = () => {
     return 'low';
   }
   return 'medium';
+};
+
+const getListIndex = () => {
+  const sectionTitle = document.querySelector('.tasks-section__title')
+    .textContent;
+  const activeListIndex = rootList
+    .getList()
+    .findIndex((list) => list.getTitle() === sectionTitle);
+
+  return activeListIndex;
 };
 
 export { createTaskElement, createListElement, render, renderLists };

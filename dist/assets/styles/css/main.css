@@ -124,11 +124,12 @@ body {
   margin: 1em 0;
   margin-left: 2rem;
   display: flex;
-  width: 15rem;
+  width: auto;
   justify-content: space-between;
 }
 
 .edit-list-icon {
+  margin-left: 1rem;
   cursor: pointer;
   width: 1.5em;
 }
