@@ -7,15 +7,19 @@ import { mockTasks } from './mockData';
 // load default examples
 const rootList = createList('Root');
 export default rootList;
-const defaultList = createList('Home');
-rootList.addToList(defaultList);
-const testList1 = createList('Test');
-rootList.addToList(testList1);
 
-mockTasks.forEach(({ title, description, priority }) => {
-  const newTask = createTask(title, description, priority);
-  defaultList.addToList(newTask);
-});
+
+if (localStorage.getItem('root-list') === null) {
+  const defaultList = createList('Home');
+  rootList.addToList(defaultList);
+  mockTasks.forEach(({ title, description, priority }) => {
+    const newTask = createTask(title, description, priority);
+    defaultList.addToList(newTask);
+  });
+
+}
+//
+
 
 render();
 renderLists();

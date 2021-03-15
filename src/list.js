@@ -1,5 +1,5 @@
 const createList = (title) => {
-  const list = [];
+  let list = [];
 
   // Getters
   const getTitle = () => title;
@@ -9,6 +9,9 @@ const createList = (title) => {
   // eslint-disable-next-line no-param-reassign
   // eslint-disable-next-line no-return-assign
   const setTitle = (newTitle) => (title = newTitle);
+
+  // eslint-disable-next-line no-return-assign
+  const updateList = (newList) => (list = newList);
 
   // Methods
   const addToList = (task) => list.push(task);
@@ -23,6 +26,7 @@ const createList = (title) => {
     setTitle,
     addToList,
     removeTask,
+    updateList,
   };
 };
 
