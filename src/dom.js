@@ -124,7 +124,7 @@ const renderLists = () => {
   addListBtn.addEventListener('click', openListModal);
 
   listSection.appendChild(addListBtn);
-  localStorage.setItem('root-list', JSON.stringify(rootList));
+  localStorage.setItem('rootList', JSON.stringify(rootList));
 };
 
 const render = (list = rootList.getList()[0]) => {
@@ -140,7 +140,7 @@ const render = (list = rootList.getList()[0]) => {
   document.querySelector(
     '.tasks-section__title'
   ).textContent = `${list.getTitle()}`;
-  localStorage.setItem('root-list', JSON.stringify(rootList));
+  localStorage.setItem('rootList', JSON.stringify(rootList));
 };
 
 const handleRemoveTask = (index) => {
