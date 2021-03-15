@@ -142,8 +142,9 @@ const render = (list = rootList.getList()[0]) => {
 };
 
 const handleRemoveTask = (index) => {
-  defaultList.removeTask(index);
-  render();
+  const list = rootList.getList()[getListIndex()];
+  list.removeTask(index);
+  render(list);
 };
 
 const handleToggleChecked = (index) => {
