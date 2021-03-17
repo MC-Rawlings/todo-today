@@ -2,6 +2,7 @@
 import rootList, { defaultList } from './index';
 import createTask from './task';
 import createList from './list';
+import { saveToLocalStorage } from './storage';
 
 const taskSection = document.querySelector('.tasks-section');
 const listSection = document.querySelector('.lists');
@@ -124,6 +125,7 @@ const renderLists = () => {
   addListBtn.addEventListener('click', openListModal);
 
   listSection.appendChild(addListBtn);
+  saveToLocalStorage();
 };
 
 const render = (list = rootList.getList()[0]) => {
@@ -139,6 +141,7 @@ const render = (list = rootList.getList()[0]) => {
   document.querySelector(
     '.tasks-section__title'
   ).textContent = `${list.getTitle()}`;
+  saveToLocalStorage();
 };
 
 const handleRemoveTask = (index) => {

@@ -18,10 +18,8 @@ mockTasks.forEach(({ title, description, priority }) => {
 });
 
 if (localStorage.getItem('rootList') !== null) {
+  loadFromLocalStorage();
 }
-
-saveToLocalStorage();
-loadFromLocalStorage();
 
 render();
 renderLists();
