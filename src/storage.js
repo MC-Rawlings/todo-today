@@ -1,12 +1,14 @@
 import rootList from './index';
+import createList from './list';
+import createTask from './task';
 
 const saveToLocalStorage = () => {
-  const allLists = Array.from(rootList.getList());
+  const allLists = rootList.getList();
   const newRootList = [];
 
   // loop through all the lists in root
   allLists.forEach((list) => {
-    const tasks = Array.from(list.getList());
+    const tasks = list.getList();
     const listData = {
       title: list.getTitle(),
       list: [],
@@ -30,4 +32,29 @@ const saveToLocalStorage = () => {
   localStorage.setItem('rootList', JSON.stringify(newRootList));
 };
 
-export { saveToLocalStorage };
+const loadFromLocalStorage = () => {
+  const lists = Array.from(JSON.parse(localStorage.getItem('rootList'));
+  const newRoot = [];
+
+  lists.forEach(
+    ({ title } = (list) => {
+      const newList = createList(title);
+
+      list.forEach(
+        ({ title, priority, description, isChecked } = (task) => {
+          createTask(title, description, priority);
+          if (task.getIsChecked !== isChecked) {
+            task.toggleIsChecked();
+            console.log('test:', title, description, priority, isChecked);
+          }
+
+          newList.addToList(task);
+        })
+      );
+      newRoot.push(newList);
+    })
+  );
+  rootList.updateList(newRoot);
+};
+
+export { saveToLocalStorage, loadFromLocalStorage };

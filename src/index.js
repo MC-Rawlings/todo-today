@@ -3,7 +3,7 @@ import { render, renderLists } from './dom';
 import createList from './list';
 import createTask from './task';
 import { mockTasks } from './mockData';
-import { saveToLocalStorage } from './storage';
+import { saveToLocalStorage, loadFromLocalStorage } from './storage';
 
 // load default examples
 const rootList = createList('Root');
@@ -18,10 +18,10 @@ mockTasks.forEach(({ title, description, priority }) => {
 });
 
 if (localStorage.getItem('rootList') !== null) {
-  // load local files here
 }
 
 saveToLocalStorage();
+loadFromLocalStorage();
 
 render();
 renderLists();
