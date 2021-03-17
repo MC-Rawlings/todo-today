@@ -3,6 +3,7 @@ import { render, renderLists } from './dom';
 import createList from './list';
 import createTask from './task';
 import { mockTasks } from './mockData';
+import { saveToLocalStorage } from './storage';
 
 // load default examples
 const rootList = createList('Root');
@@ -16,13 +17,11 @@ mockTasks.forEach(({ title, description, priority }) => {
   defaultList.addToList(newTask);
 });
 
-if (localStorage.getItem('rootList') === null) {
-  localStorage.setItem('rootList', JSON.stringify(rootList.getList()));
-} else {
-  console.log(JSON.parse(localStorage.getItem('rootList')));
-  const savedList = JSON.parse(localStorage.getItem('rootList'));
-  console.log(savedList);
+if (localStorage.getItem('rootList') !== null) {
+  // load local files here
 }
+
+saveToLocalStorage();
 
 render();
 renderLists();
