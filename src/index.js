@@ -7,7 +7,6 @@ import { saveToLocalStorage, loadFromLocalStorage } from './storage';
 
 // load default examples
 const rootList = createList('Root');
-export default rootList;
 const defaultList = createList('Home');
 
 rootList.addToList(defaultList);
@@ -25,3 +24,4 @@ render();
 renderLists();
 
 export { defaultList };
+export default rootList;

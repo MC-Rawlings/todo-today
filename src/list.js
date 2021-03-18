@@ -1,3 +1,11 @@
+/**
+ * A list gets created which will hold tasks
+ * @param {string} title Title that gets displayed for the list
+ * @returns functions
+ * @example
+ * createList('New title');
+ * // Creates a new list with a tile of 'New title'
+ */
 const createList = (title) => {
   let list = [];
 
@@ -14,6 +22,10 @@ const createList = (title) => {
   const updateList = (newList) => (list = newList);
 
   // Methods
+  /**
+   * Gets a title
+   * @returns {string} The title
+   */
   const addToList = (task) => list.push(task);
 
   const removeTask = (index) => {

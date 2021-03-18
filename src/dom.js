@@ -1,5 +1,6 @@
+/* eslint-disable no-use-before-define */
 // eslint-disable-next-line import/no-cycle
-import rootList, { defaultList } from './index';
+import rootList from './index';
 import createTask from './task';
 import createList from './list';
 import { saveToLocalStorage } from './storage';
@@ -9,9 +10,10 @@ const listSection = document.querySelector('.lists');
 
 // helper functions
 const clearTaskSection = () => {
-  while (taskSection.firstChild) {
+  /* while (taskSection.firstChild) {
     taskSection.removeChild(taskSection.firstChild);
-  }
+  } */
+  // listSection.textContent = '';
 };
 
 const clearListSection = () => {
@@ -98,7 +100,7 @@ const createTaskElement = (task, index) => {
   return taskElement;
 };
 
-const createListElement = (list, index) => {
+const createListElement = (list) => {
   const title = list.getTitle();
   const listItem = document.createElement('li');
   listItem.classList.add('list-item');
@@ -139,7 +141,7 @@ const render = (list = rootList.getList()[0]) => {
   });
 
   document.querySelector(
-    '.tasks-section__title'
+    '.tasks-section__title',
   ).textContent = `${list.getTitle()}`;
   saveToLocalStorage();
 };
@@ -181,13 +183,13 @@ const handleEditTask = (index) => {
       render(list);
       closeEditModal();
     },
-    { once: true }
+    { once: true },
   );
 };
 
 const handleRenderList = (list) => {
   document.querySelector(
-    '.tasks-section__title'
+    '.tasks-section__title',
   ).textContent = `${list.getTitle()}`;
   render(list);
 };
@@ -200,7 +202,7 @@ const handleRemoveList = () => {
 
 const handleEditTitle = () => {
   document.querySelector(
-    '.add-list__form-edit'
+    '.add-list__form-edit',
   ).elements[0].value = rootList.getList()[getListIndex()].getTitle();
   openListModalEdit();
 
@@ -210,13 +212,13 @@ const handleEditTitle = () => {
     () => {
       const list = rootList.getList()[getListIndex()];
       list.setTitle(
-        document.querySelector('.add-list__form-edit').elements[0].value
+        document.querySelector('.add-list__form-edit').elements[0].value,
       );
       renderLists();
       render(list);
       closeListModalEdit();
     },
-    { once: true }
+    { once: true },
   );
 };
 
@@ -361,7 +363,7 @@ const getListIndex = () => {
     .findIndex(
       (list) =>
         list.getTitle() ===
-        document.querySelector('.tasks-section__title').textContent
+        document.querySelector('.tasks-section__title').textContent,
     );
   console.log(activeListIndex);
 
