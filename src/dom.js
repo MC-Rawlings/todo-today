@@ -13,13 +13,14 @@ const clearTaskSection = () => {
   /* while (taskSection.firstChild) {
     taskSection.removeChild(taskSection.firstChild);
   } */
-  // listSection.textContent = '';
+  taskSection.textContent = '';
 };
 
 const clearListSection = () => {
-  while (listSection.firstChild) {
+  /* while (listSection.firstChild) {
     listSection.removeChild(listSection.firstChild);
-  }
+  } */
+  listSection.textContent = '';
 };
 
 // append to DOM
@@ -41,7 +42,8 @@ const createTaskElement = (task, index) => {
 
   const checkboxImage = document.createElement('img');
   checkboxImage.classList.add('check-icon');
-  if (task.getIsChecked() === false) {
+  // if (task.getIsChecked() === false) {
+  if (!task.getIsChecked()) {
     checkboxImage.src = 'assets/images/checkbox.svg';
   } else {
     checkboxImage.src = 'assets/images/checked.svg';
